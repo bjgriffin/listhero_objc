@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36307A0918C39C05003BC0A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0818C39C05003BC0A2 /* Foundation.framework */; };
+		36307A0B18C39C05003BC0A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */; };
+		36307A0D18C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
+		36307A1318C39C05003BC0A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36307A1118C39C05003BC0A2 /* InfoPlist.strings */; };
+		36307A1518C39C05003BC0A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A1418C39C05003BC0A2 /* main.m */; };
+		36307A1918C39C05003BC0A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A1818C39C05003BC0A2 /* AppDelegate.m */; };
+		36307A2718C39C05003BC0A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36307A2618C39C05003BC0A2 /* Images.xcassets */; };
+		36307A2E18C39C05003BC0A2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A2D18C39C05003BC0A2 /* XCTest.framework */; };
+		36307A2F18C39C05003BC0A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0818C39C05003BC0A2 /* Foundation.framework */; };
+		36307A3018C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
+		36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36307A3618C39C05003BC0A2 /* InfoPlist.strings */; };
+		36307A3A18C39C05003BC0A2 /* CalendarDrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A3918C39C05003BC0A2 /* CalendarDrawTests.m */; };
+		36307A4618C39C91003BC0A2 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4418C39C91003BC0A2 /* ContainerViewController.m */; };
+		36307A4718C39C91003BC0A2 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4518C39C91003BC0A2 /* ContainerViewController.xib */; };
+		36307A4B18C39CD4003BC0A2 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4918C39CD4003BC0A2 /* DrawerViewController.m */; };
+		36307A4C18C39CD4003BC0A2 /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */; };
+		36307A5018C39D58003BC0A2 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */; };
+		36307A5118C39D58003BC0A2 /* ShoppingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */; };
+		36307A5418C3C08D003BC0A2 /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */; };
+		36307A5618C3C0C6003BC0A2 /* ShoppingListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */; };
+		36307A5818C3E811003BC0A2 /* ic_drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5718C3E811003BC0A2 /* ic_drawer.png */; };
+		36307A5B18C3E96A003BC0A2 /* DrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5A18C3E96A003BC0A2 /* DrawerCell.m */; };
+		36307A5D18C3E980003BC0A2 /* DrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5C18C3E980003BC0A2 /* DrawerCell.xib */; };
+		36488788194CA4FA00D8DF56 /* Lists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */; };
+		3648878B194CA64A00D8DF56 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878A194CA64A00D8DF56 /* List.m */; };
+		3648878E194CA64A00D8DF56 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878D194CA64A00D8DF56 /* ListItem.m */; };
+		3666227A18F1E9D100E1FE61 /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666227918F1E9D100E1FE61 /* FavoritesCell.m */; };
+		3666227C18F1E9F000E1FE61 /* FavoritesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */; };
+		3683EB2F18C82B970028925E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EB2D18C82B970028925E /* BaseViewController.m */; };
+		3683EB3018C82B970028925E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3683EB2E18C82B970028925E /* BaseViewController.xib */; };
+		368A58C51940F7DE00A3F4FB /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A58C41940F7DE00A3F4FB /* DataManager.m */; };
+		36CBFC2618ED03CC0042039D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CBFC2418ED03CC0042039D /* FavoritesViewController.m */; };
+		36CBFC2718ED03CC0042039D /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */; };
+		36E634FA18F4E64000ED1D16 /* complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F718F4E64000ED1D16 /* complete.png */; };
+		36E634FB18F4E64000ED1D16 /* incomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F818F4E64000ED1D16 /* incomplete.png */; };
+		36E634FC18F4E64000ED1D16 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F918F4E64000ED1D16 /* plus-icon.png */; };
+		36E634FF18F4F79100ED1D16 /* star-icon-favorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */; };
+		36E6350018F4F79100ED1D16 /* star-icon-unfavorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36307A3118C39C05003BC0A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 363079FD18C39C05003BC0A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36307A0418C39C05003BC0A2;
+			remoteInfo = CalendarDraw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36307A0518C39C05003BC0A2 /* CalendarDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36307A0818C39C05003BC0A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36307A0C18C39C05003BC0A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36307A1018C39C05003BC0A2 /* CalendarDraw-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalendarDraw-Info.plist"; sourceTree = "<group>"; };
+		36307A1218C39C05003BC0A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36307A1418C39C05003BC0A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36307A1618C39C05003BC0A2 /* CalendarDraw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CalendarDraw-Prefix.pch"; sourceTree = "<group>"; };
+		36307A1718C39C05003BC0A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36307A1818C39C05003BC0A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36307A2618C39C05003BC0A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36307A2C18C39C05003BC0A2 /* CalendarDrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarDrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36307A2D18C39C05003BC0A2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		36307A3518C39C05003BC0A2 /* CalendarDrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalendarDrawTests-Info.plist"; sourceTree = "<group>"; };
+		36307A3718C39C05003BC0A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36307A3918C39C05003BC0A2 /* CalendarDrawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarDrawTests.m; sourceTree = "<group>"; };
+		36307A4318C39C91003BC0A2 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		36307A4418C39C91003BC0A2 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		36307A4518C39C91003BC0A2 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
+		36307A4818C39CD4003BC0A2 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		36307A4918C39CD4003BC0A2 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
+		36307A4D18C39D58003BC0A2 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
+		36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
+		36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingListViewController.xib; sourceTree = "<group>"; };
+		36307A5218C3C08D003BC0A2 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListCell.h; sourceTree = "<group>"; };
+		36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListCell.m; sourceTree = "<group>"; };
+		36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShoppingListCell.xib; path = ../ShoppingListCell.xib; sourceTree = "<group>"; };
+		36307A5718C3E811003BC0A2 /* ic_drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_drawer.png; sourceTree = "<group>"; };
+		36307A5918C3E96A003BC0A2 /* DrawerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerCell.h; sourceTree = "<group>"; };
+		36307A5A18C3E96A003BC0A2 /* DrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerCell.m; sourceTree = "<group>"; };
+		36307A5C18C3E980003BC0A2 /* DrawerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerCell.xib; sourceTree = "<group>"; };
+		36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lists.xcdatamodel; sourceTree = "<group>"; };
+		36488789194CA64A00D8DF56 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		3648878A194CA64A00D8DF56 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		3648878C194CA64A00D8DF56 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		3648878D194CA64A00D8DF56 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
+		3666227818F1E9D100E1FE61 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
+		3666227918F1E9D100E1FE61 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
+		3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
+		3683EB2C18C82B970028925E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3683EB2D18C82B970028925E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		3683EB2E18C82B970028925E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		368A58C31940F7DE00A3F4FB /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = ../DataManager.h; sourceTree = "<group>"; };
+		368A58C41940F7DE00A3F4FB /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = ../DataManager.m; sourceTree = "<group>"; };
+		36CBFC2318ED03CC0042039D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		36CBFC2418ED03CC0042039D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		36E634F718F4E64000ED1D16 /* complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complete.png; sourceTree = "<group>"; };
+		36E634F818F4E64000ED1D16 /* incomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incomplete.png; sourceTree = "<group>"; };
+		36E634F918F4E64000ED1D16 /* plus-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon.png"; sourceTree = "<group>"; };
+		36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-favorited.png"; sourceTree = "<group>"; };
+		36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-unfavorited.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36307A0218C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A0B18C39C05003BC0A2 /* CoreGraphics.framework in Frameworks */,
+				36307A0D18C39C05003BC0A2 /* UIKit.framework in Frameworks */,
+				36307A0918C39C05003BC0A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2918C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A2E18C39C05003BC0A2 /* XCTest.framework in Frameworks */,
+				36307A3018C39C05003BC0A2 /* UIKit.framework in Frameworks */,
+				36307A2F18C39C05003BC0A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		363079FC18C39C05003BC0A2 = {
+			isa = PBXGroup;
+			children = (
+				36307A0E18C39C05003BC0A2 /* CalendarDraw */,
+				36307A3318C39C05003BC0A2 /* CalendarDrawTests */,
+				36307A0718C39C05003BC0A2 /* Frameworks */,
+				36307A0618C39C05003BC0A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36307A0618C39C05003BC0A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36307A0518C39C05003BC0A2 /* CalendarDraw.app */,
+				36307A2C18C39C05003BC0A2 /* CalendarDrawTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36307A0718C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36307A0818C39C05003BC0A2 /* Foundation.framework */,
+				36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */,
+				36307A0C18C39C05003BC0A2 /* UIKit.framework */,
+				36307A2D18C39C05003BC0A2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36307A0E18C39C05003BC0A2 /* CalendarDraw */ = {
+			isa = PBXGroup;
+			children = (
+				368A58BC1940F47C00A3F4FB /* CoreData */,
+				366E8714193FEBA200792301 /* Cells */,
+				366E8713193FEB9B00792301 /* Views */,
+				366E8712193FEB9100792301 /* ViewControllers */,
+				36307A1718C39C05003BC0A2 /* AppDelegate.h */,
+				36307A1818C39C05003BC0A2 /* AppDelegate.m */,
+				36307A2618C39C05003BC0A2 /* Images.xcassets */,
+				36307A0F18C39C05003BC0A2 /* Supporting Files */,
+				36E634F618F4E61D00ED1D16 /* Resources */,
+			);
+			path = CalendarDraw;
+			sourceTree = "<group>";
+		};
+		36307A0F18C39C05003BC0A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36307A5718C3E811003BC0A2 /* ic_drawer.png */,
+				36307A1018C39C05003BC0A2 /* CalendarDraw-Info.plist */,
+				36307A1118C39C05003BC0A2 /* InfoPlist.strings */,
+				36307A1418C39C05003BC0A2 /* main.m */,
+				36307A1618C39C05003BC0A2 /* CalendarDraw-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36307A3318C39C05003BC0A2 /* CalendarDrawTests */ = {
+			isa = PBXGroup;
+			children = (
+				36307A3918C39C05003BC0A2 /* CalendarDrawTests.m */,
+				36307A3418C39C05003BC0A2 /* Supporting Files */,
+			);
+			path = CalendarDrawTests;
+			sourceTree = "<group>";
+		};
+		36307A3418C39C05003BC0A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36307A3518C39C05003BC0A2 /* CalendarDrawTests-Info.plist */,
+				36307A3618C39C05003BC0A2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		366E8712193FEB9100792301 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36307A4D18C39D58003BC0A2 /* ShoppingListViewController.h */,
+				36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */,
+				36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */,
+				366E8716193FEBE100792301 /* Drawers */,
+				366E8715193FEBB800792301 /* Common */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		366E8713193FEB9B00792301 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		366E8714193FEBA200792301 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				36307A5218C3C08D003BC0A2 /* ShoppingListCell.h */,
+				36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */,
+				36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */,
+				36307A5918C3E96A003BC0A2 /* DrawerCell.h */,
+				36307A5A18C3E96A003BC0A2 /* DrawerCell.m */,
+				36307A5C18C3E980003BC0A2 /* DrawerCell.xib */,
+				3666227818F1E9D100E1FE61 /* FavoritesCell.h */,
+				3666227918F1E9D100E1FE61 /* FavoritesCell.m */,
+				3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		366E8715193FEBB800792301 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3683EB2C18C82B970028925E /* BaseViewController.h */,
+				3683EB2D18C82B970028925E /* BaseViewController.m */,
+				3683EB2E18C82B970028925E /* BaseViewController.xib */,
+				36307A4318C39C91003BC0A2 /* ContainerViewController.h */,
+				36307A4418C39C91003BC0A2 /* ContainerViewController.m */,
+				36307A4518C39C91003BC0A2 /* ContainerViewController.xib */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		366E8716193FEBE100792301 /* Drawers */ = {
+			isa = PBXGroup;
+			children = (
+				36307A4818C39CD4003BC0A2 /* DrawerViewController.h */,
+				36307A4918C39CD4003BC0A2 /* DrawerViewController.m */,
+				36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */,
+				36CBFC2318ED03CC0042039D /* FavoritesViewController.h */,
+				36CBFC2418ED03CC0042039D /* FavoritesViewController.m */,
+				36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */,
+			);
+			name = Drawers;
+			sourceTree = "<group>";
+		};
+		368A58BC1940F47C00A3F4FB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				368A58C31940F7DE00A3F4FB /* DataManager.h */,
+				368A58C41940F7DE00A3F4FB /* DataManager.m */,
+				36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */,
+				3648878C194CA64A00D8DF56 /* ListItem.h */,
+				3648878D194CA64A00D8DF56 /* ListItem.m */,
+				36488789194CA64A00D8DF56 /* List.h */,
+				3648878A194CA64A00D8DF56 /* List.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		36E634F618F4E61D00ED1D16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */,
+				36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */,
+				36E634F718F4E64000ED1D16 /* complete.png */,
+				36E634F818F4E64000ED1D16 /* incomplete.png */,
+				36E634F918F4E64000ED1D16 /* plus-icon.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36307A0418C39C05003BC0A2 /* CalendarDraw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36307A3D18C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "CalendarDraw" */;
+			buildPhases = (
+				36307A0118C39C05003BC0A2 /* Sources */,
+				36307A0218C39C05003BC0A2 /* Frameworks */,
+				36307A0318C39C05003BC0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalendarDraw;
+			productName = CalendarDraw;
+			productReference = 36307A0518C39C05003BC0A2 /* CalendarDraw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36307A2B18C39C05003BC0A2 /* CalendarDrawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36307A4018C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "CalendarDrawTests" */;
+			buildPhases = (
+				36307A2818C39C05003BC0A2 /* Sources */,
+				36307A2918C39C05003BC0A2 /* Frameworks */,
+				36307A2A18C39C05003BC0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36307A3218C39C05003BC0A2 /* PBXTargetDependency */,
+			);
+			name = CalendarDrawTests;
+			productName = CalendarDrawTests;
+			productReference = 36307A2C18C39C05003BC0A2 /* CalendarDrawTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		363079FD18C39C05003BC0A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "BJ Griffin";
+				TargetAttributes = {
+					36307A2B18C39C05003BC0A2 = {
+						TestTargetID = 36307A0418C39C05003BC0A2;
+					};
+				};
+			};
+			buildConfigurationList = 36307A0018C39C05003BC0A2 /* Build configuration list for PBXProject "CalendarDraw" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 363079FC18C39C05003BC0A2;
+			productRefGroup = 36307A0618C39C05003BC0A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36307A0418C39C05003BC0A2 /* CalendarDraw */,
+				36307A2B18C39C05003BC0A2 /* CalendarDrawTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36307A0318C39C05003BC0A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E6350018F4F79100ED1D16 /* star-icon-unfavorited.png in Resources */,
+				36E634FF18F4F79100ED1D16 /* star-icon-favorited.png in Resources */,
+				3666227C18F1E9F000E1FE61 /* FavoritesCell.xib in Resources */,
+				36307A5118C39D58003BC0A2 /* ShoppingListViewController.xib in Resources */,
+				36307A5618C3C0C6003BC0A2 /* ShoppingListCell.xib in Resources */,
+				36307A5818C3E811003BC0A2 /* ic_drawer.png in Resources */,
+				36E634FA18F4E64000ED1D16 /* complete.png in Resources */,
+				36307A2718C39C05003BC0A2 /* Images.xcassets in Resources */,
+				36E634FC18F4E64000ED1D16 /* plus-icon.png in Resources */,
+				36E634FB18F4E64000ED1D16 /* incomplete.png in Resources */,
+				36307A5D18C3E980003BC0A2 /* DrawerCell.xib in Resources */,
+				36307A4C18C39CD4003BC0A2 /* DrawerViewController.xib in Resources */,
+				3683EB3018C82B970028925E /* BaseViewController.xib in Resources */,
+				36307A1318C39C05003BC0A2 /* InfoPlist.strings in Resources */,
+				36CBFC2718ED03CC0042039D /* FavoritesViewController.xib in Resources */,
+				36307A4718C39C91003BC0A2 /* ContainerViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2A18C39C05003BC0A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36307A0118C39C05003BC0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3648878B194CA64A00D8DF56 /* List.m in Sources */,
+				36307A5018C39D58003BC0A2 /* ShoppingListViewController.m in Sources */,
+				3683EB2F18C82B970028925E /* BaseViewController.m in Sources */,
+				36307A1918C39C05003BC0A2 /* AppDelegate.m in Sources */,
+				36307A4618C39C91003BC0A2 /* ContainerViewController.m in Sources */,
+				36307A5B18C3E96A003BC0A2 /* DrawerCell.m in Sources */,
+				36488788194CA4FA00D8DF56 /* Lists.xcdatamodeld in Sources */,
+				3666227A18F1E9D100E1FE61 /* FavoritesCell.m in Sources */,
+				36CBFC2618ED03CC0042039D /* FavoritesViewController.m in Sources */,
+				36307A5418C3C08D003BC0A2 /* ShoppingListCell.m in Sources */,
+				3648878E194CA64A00D8DF56 /* ListItem.m in Sources */,
+				36307A4B18C39CD4003BC0A2 /* DrawerViewController.m in Sources */,
+				368A58C51940F7DE00A3F4FB /* DataManager.m in Sources */,
+				36307A1518C39C05003BC0A2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2818C39C05003BC0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A3A18C39C05003BC0A2 /* CalendarDrawTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36307A3218C39C05003BC0A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36307A0418C39C05003BC0A2 /* CalendarDraw */;
+			targetProxy = 36307A3118C39C05003BC0A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36307A1118C39C05003BC0A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36307A1218C39C05003BC0A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		36307A3618C39C05003BC0A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36307A3718C39C05003BC0A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36307A3B18C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36307A3C18C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36307A3E18C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalendarDraw/CalendarDraw-Prefix.pch";
+				INFOPLIST_FILE = "CalendarDraw/CalendarDraw-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36307A3F18C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalendarDraw/CalendarDraw-Prefix.pch";
+				INFOPLIST_FILE = "CalendarDraw/CalendarDraw-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		36307A4118C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalendarDraw.app/CalendarDraw";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalendarDraw/CalendarDraw-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CalendarDrawTests/CalendarDrawTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		36307A4218C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalendarDraw.app/CalendarDraw";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalendarDraw/CalendarDraw-Prefix.pch";
+				INFOPLIST_FILE = "CalendarDrawTests/CalendarDrawTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36307A0018C39C05003BC0A2 /* Build configuration list for PBXProject "CalendarDraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A3B18C39C05003BC0A2 /* Debug */,
+				36307A3C18C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36307A3D18C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "CalendarDraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A3E18C39C05003BC0A2 /* Debug */,
+				36307A3F18C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36307A4018C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "CalendarDrawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A4118C39C05003BC0A2 /* Debug */,
+				36307A4218C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */,
+			);
+			currentVersion = 36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */;
+			path = Lists.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 363079FD18C39C05003BC0A2 /* Project object */;
+}
