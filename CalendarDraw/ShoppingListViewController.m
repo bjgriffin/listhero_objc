@@ -107,12 +107,12 @@
 - (void)addItem {
     if (![_itemTextField isEqual:@""]) {
         if (!_currentList) {
-            [[DataManager sharedInstance] addItemToNewList:_itemTextField.text favorited:NO details:nil];
+            [[DataManager sharedInstance] addNewItemToNewList:_itemTextField.text isFavorited:NO details:nil];
             _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
             _navItem.title = _currentList.title;
             [self.tableView reloadData];
         } else {
-            [[DataManager sharedInstance] addItemToCurrentList:_currentList name:_itemTextField.text favorited:NO details:nil];
+            [[DataManager sharedInstance] addNewItemToCurrentList:_currentList name:_itemTextField.text  isFavorited:NO details:nil];
             [self.tableView reloadData];
             _itemTextField.text = @"";
             [_itemTextField resignFirstResponder];
@@ -176,6 +176,23 @@
     cell.title.text = item.name;
     [cell setupItemCell:item];
     return cell;
+}
+
+#pragma mark -- FavoritesCell delegate methods
+- (void)addItemFromFavoritesList:(ListItem*)item {
+    if (!_currentList) {
+        [[DataManager sharedInstance] addItemToNewList:item];
+        _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
+        _navItem.title = _currentList.title;
+        [self.tableView reloadData];
+    } else {
+        if ([_currentList.items containsObject:item]) {
+            NSLog(@"Favorite already exist in list.");
+        } else {
+            [[DataManager sharedInstance] addItemToCurrentList:_currentList item:item];
+            [self.tableView reloadData];
+        }
+    }
 }
 
 @end

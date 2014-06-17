@@ -28,7 +28,7 @@
 }
 
 - (void)updateFavorited {
-    if (_listItem.isFavorited) {
+    if (_listItem.isFavorited.boolValue) {
         [_favoritedImageView setImage:[UIImage imageNamed: @"star-icon-favorited.png"]];
     } else {
         [_favoritedImageView setImage:[UIImage imageNamed: @"star-icon-unfavorited.png"]];
@@ -36,7 +36,7 @@
 }
 
 - (void)updateCompleted {
-    if (_listItem.isComplete) {
+    if ((BOOL)_listItem.isComplete.boolValue) {
         [_checkboxImageView setImage:[UIImage imageNamed: @"complete.png"]];
     } else {
         [_checkboxImageView setImage:[UIImage imageNamed: @"incomplete.png"]];
@@ -45,10 +45,14 @@
 
 - (void)updateFavoritedData {
     [[DataManager sharedInstance] updateItemFavorite:_listItem];
+    
+    [self updateFavorited];
 }
 
 - (void)updateCompletedData {
     [[DataManager sharedInstance] updateItemComplete:_listItem];
+    
+    [self updateCompleted];
 }
 
 @end

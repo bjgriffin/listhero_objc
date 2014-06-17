@@ -14,9 +14,12 @@
 
 + (instancetype)sharedInstance;
 - (void)createList:(NSString*)title category:(NSString*)category;
-- (void)addItemToNewList:(NSString*)name favorited:(BOOL)favorited details:(NSString*)details;
-- (void)addItemToCurrentList:(List*)list name:(NSString*)name favorited:(BOOL)favorited details:(NSString*)details;
+- (void)addNewItemToNewList:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details;
+- (void)addNewItemToCurrentList:(List*)list name:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details;
+- (void)addItemToCurrentList:(List*)list item:(ListItem*)item;
+- (void)addItemToNewList:(ListItem*)item;
 - (void)updateItemFavorite:(ListItem*)item;
 - (void)updateItemComplete:(ListItem*)item;
 - (NSArray*)fetchLists;
+- (NSArray*)fetchItems;
 @end

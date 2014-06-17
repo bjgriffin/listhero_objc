@@ -55,7 +55,7 @@
     if (_drawerViewController == nil)
     {
         self.favoritesViewController = [[FavoritesViewController alloc] initWithNibName:@"FavoritesViewController" bundle:nil];
-        
+        self.favoritesViewController.containerViewController = self;
         [self.view addSubview:self.favoritesViewController.view];
         
         [self addChildViewController:_favoritesViewController];

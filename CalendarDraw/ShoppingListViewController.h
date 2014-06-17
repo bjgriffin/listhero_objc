@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
+#import "FavoritesCell.h"
 #import "List.h"
 
 @class ContainerViewController;
 
-@interface ShoppingListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate, UIAlertViewDelegate, UITextFieldDelegate>
+@interface ShoppingListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate, UIAlertViewDelegate, UITextFieldDelegate, FavoritesCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backBarButtonItem;

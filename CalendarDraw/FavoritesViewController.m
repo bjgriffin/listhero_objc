@@ -8,8 +8,12 @@
 
 #import "FavoritesViewController.h"
 #import "ShoppingListViewController.h"
+#import "DataManager.h"
 
 @interface FavoritesViewController ()
+{
+NSMutableArray *favoritedItems;
+}
 
 @end
 
@@ -19,7 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setupFavorites];
     }
     return self;
 }
@@ -40,6 +44,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Private methods
+- (void)setupFavorites {
+    NSArray *items = [[DataManager sharedInstance] fetchItems];
+    favoritedItems = [[NSMutableArray alloc] init];
+    for(ListItem *item in items) {
+        if (item.isFavorited.boolValue) {
+            [favoritedItems addObject:item];
+        }
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,14 +64,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [favoritedItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoritesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoritesCell"];
-
-//    [cell.drawerOptionTitle setText:kFavoriteTitle];
-
+    ListItem *item = [favoritedItems objectAtIndex:indexPath.row];
+    [cell setupFavoritesCell:item];
+    [cell.titleLabel setText:item.name];
+    cell.delegate = _containerViewController.shoppingListViewController;
+    
     return cell;
 }
 

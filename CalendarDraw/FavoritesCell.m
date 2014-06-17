@@ -10,20 +10,18 @@
 
 @implementation FavoritesCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+- (void)setupFavoritesCell:(ListItem*)item {
+    _listItem = item;
+    _addImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *addItemGesture =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addItem)];
+    addItemGesture.numberOfTapsRequired = 1;
+    [_addImageView addGestureRecognizer:addItemGesture];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)addItem {
+    if([self.delegate respondsToSelector:@selector(addItemFromFavoritesList:)]) {
+        [self.delegate addItemFromFavoritesList:_listItem];
+    }
 }
 
 @end

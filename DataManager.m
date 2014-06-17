@@ -31,13 +31,10 @@
     list.title = title;
     list.category = category;
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
+    [self saveManagedObjectContext];
 }
 
-- (void)addItemToNewList:(NSString*)name favorited:(BOOL)favorited details:(NSString*)details {
+- (void)addNewItemToNewList:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details {
     List *list = [NSEntityDescription
                    insertNewObjectForEntityForName:@"List"
                    inManagedObjectContext:self.managedObjectContext];
@@ -45,39 +42,41 @@
     list.title = name;
     list.category = @"";
     
-    ListItem *item = [NSEntityDescription
-                       insertNewObjectForEntityForName:@"ListItem"
-                       inManagedObjectContext:self.managedObjectContext];
-    
-    item.name = name;
-    item.isFavorited = [NSNumber numberWithBool:favorited];
-    item.details = details;
+    ListItem *item = [self createNewItem:name isFavorited:favorited details:details];
+
     [item addListsObject:list];
     
     [list addItemsObject:item];
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
+    [self saveManagedObjectContext];
 }
 
-- (void)addItemToCurrentList:(List*)list name:(NSString*)name favorited:(BOOL)favorited details:(NSString*)details {
-    ListItem *item = [NSEntityDescription
-                       insertNewObjectForEntityForName:@"ListItem"
-                       inManagedObjectContext:self.managedObjectContext];
+- (void)addNewItemToCurrentList:(List*)list name:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details {
+    ListItem *item = [self createNewItem:name isFavorited:favorited details:details];
     
-    item.name = name;
-    item.isFavorited = [NSNumber numberWithBool:favorited];
-    item.details = details;
     [item addListsObject:list];
     
     [list addItemsObject:item];
+    [self saveManagedObjectContext];
+}
+
+- (void)addItemToCurrentList:(List*)list item:(ListItem*)item {
+    [list addItemsObject:item];
+    [self saveManagedObjectContext];
+}
+
+- (void)addItemToNewList:(ListItem*)item {
+    List *list = [NSEntityDescription
+                  insertNewObjectForEntityForName:@"List"
+                  inManagedObjectContext:self.managedObjectContext];
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
+    list.title = item.name;
+    list.category = @"";
+    
+    [item addListsObject:list];
+    [list addItemsObject:item];
+    
+    [self saveManagedObjectContext];
 }
 
 - (NSArray*)fetchLists {
@@ -91,25 +90,50 @@
     return lists;
 }
 
+- (NSArray*)fetchItems {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"ListItem" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *items = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    return items;
+}
+
 - (void)updateItemFavorite:(ListItem*)item {
     ListItem *fetchedItem = [self fetchTargetItem:item];
-    if (item.isFavorited) {
+    if (item.isFavorited.boolValue) {
         fetchedItem.isFavorited = @(0);
     } else {
         fetchedItem.isFavorited = @(1);
     }
+    [self saveManagedObjectContext];
 }
 
 - (void)updateItemComplete:(ListItem*)item {
     ListItem *fetchedItem = [self fetchTargetItem:item];
-    if (item.isComplete) {
+    if (item.isComplete.boolValue) {
         fetchedItem.isComplete = @(0);
     } else {
         fetchedItem.isComplete = @(1);
     }
+    [self saveManagedObjectContext];
 }
 
 # pragma mark -- private methods
+
+- (ListItem*)createNewItem:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details {
+    ListItem *item = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"ListItem"
+                      inManagedObjectContext:self.managedObjectContext];
+    
+    item.name = name;
+    item.isFavorited = @(favorited);
+    item.details = details;
+    
+    return item;
+}
 
 - (ListItem*)fetchTargetItem:(ListItem*)item {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -121,6 +145,13 @@
     NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
     
     return [results objectAtIndex:0];
+}
+
+- (void)saveManagedObjectContext {
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
 }
 
 - (void)setupCoreData {
