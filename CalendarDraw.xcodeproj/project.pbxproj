@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36162D2C19A3063C00B51108 /* ListHeroBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2A19A3063C00B51108 /* ListHeroBG.png */; };
+		36162D2D19A3063C00B51108 /* ListHeroBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2A19A3063C00B51108 /* ListHeroBG.png */; };
+		36162D2E19A3063C00B51108 /* ListHeroLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2B19A3063C00B51108 /* ListHeroLogo.png */; };
+		36162D2F19A3063C00B51108 /* ListHeroLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2B19A3063C00B51108 /* ListHeroLogo.png */; };
+		36162D3119A30CCB00B51108 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D3019A30CCB00B51108 /* plus-icon.png */; };
+		36162D3219A30CCB00B51108 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D3019A30CCB00B51108 /* plus-icon.png */; };
 		36307A0918C39C05003BC0A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0818C39C05003BC0A2 /* Foundation.framework */; };
 		36307A0B18C39C05003BC0A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */; };
 		36307A0D18C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
@@ -38,11 +44,17 @@
 		3683EB2F18C82B970028925E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EB2D18C82B970028925E /* BaseViewController.m */; };
 		3683EB3018C82B970028925E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3683EB2E18C82B970028925E /* BaseViewController.xib */; };
 		368A58C51940F7DE00A3F4FB /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A58C41940F7DE00A3F4FB /* DataManager.m */; };
+		36955C3D195112B000693574 /* delete_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36955C3C195112B000693574 /* delete_icon.png */; };
+		36BEAF9C19A39DE600F5BE6F /* cell-background-list-hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAF9B19A39DE600F5BE6F /* cell-background-list-hero.png */; };
+		36BEAF9D19A39DE600F5BE6F /* cell-background-list-hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAF9B19A39DE600F5BE6F /* cell-background-list-hero.png */; };
+		36BEAFA519A42D9800F5BE6F /* list-hero-button-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */; };
+		36BEAFA619A42D9800F5BE6F /* list-hero-button-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */; };
+		36BEAFAB19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */; };
+		36BEAFAC19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */; };
 		36CBFC2618ED03CC0042039D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CBFC2418ED03CC0042039D /* FavoritesViewController.m */; };
 		36CBFC2718ED03CC0042039D /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */; };
 		36E634FA18F4E64000ED1D16 /* complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F718F4E64000ED1D16 /* complete.png */; };
 		36E634FB18F4E64000ED1D16 /* incomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F818F4E64000ED1D16 /* incomplete.png */; };
-		36E634FC18F4E64000ED1D16 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F918F4E64000ED1D16 /* plus-icon.png */; };
 		36E634FF18F4F79100ED1D16 /* star-icon-favorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */; };
 		36E6350018F4F79100ED1D16 /* star-icon-unfavorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */; };
 /* End PBXBuildFile section */
@@ -58,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36162D2A19A3063C00B51108 /* ListHeroBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListHeroBG.png; sourceTree = "<group>"; };
+		36162D2B19A3063C00B51108 /* ListHeroLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListHeroLogo.png; sourceTree = "<group>"; };
+		36162D3019A30CCB00B51108 /* plus-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon.png"; sourceTree = "<group>"; };
 		36307A0518C39C05003BC0A2 /* CalendarDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36307A0818C39C05003BC0A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,12 +118,15 @@
 		3683EB2E18C82B970028925E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		368A58C31940F7DE00A3F4FB /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = ../DataManager.h; sourceTree = "<group>"; };
 		368A58C41940F7DE00A3F4FB /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = ../DataManager.m; sourceTree = "<group>"; };
+		36955C3C195112B000693574 /* delete_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_icon.png; sourceTree = "<group>"; };
+		36BEAF9B19A39DE600F5BE6F /* cell-background-list-hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-background-list-hero.png"; sourceTree = "<group>"; };
+		36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-hero-button-normal.png"; sourceTree = "<group>"; };
+		36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-hero-bg-blue.png"; sourceTree = "<group>"; };
 		36CBFC2318ED03CC0042039D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		36CBFC2418ED03CC0042039D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		36E634F718F4E64000ED1D16 /* complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complete.png; sourceTree = "<group>"; };
 		36E634F818F4E64000ED1D16 /* incomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incomplete.png; sourceTree = "<group>"; };
-		36E634F918F4E64000ED1D16 /* plus-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon.png"; sourceTree = "<group>"; };
 		36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-favorited.png"; sourceTree = "<group>"; };
 		36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-unfavorited.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,11 +309,17 @@
 		36E634F618F4E61D00ED1D16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */,
+				36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */,
+				36BEAF9B19A39DE600F5BE6F /* cell-background-list-hero.png */,
+				36162D2A19A3063C00B51108 /* ListHeroBG.png */,
+				36162D2B19A3063C00B51108 /* ListHeroLogo.png */,
+				36162D3019A30CCB00B51108 /* plus-icon.png */,
+				36955C3C195112B000693574 /* delete_icon.png */,
 				36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */,
 				36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */,
 				36E634F718F4E64000ED1D16 /* complete.png */,
 				36E634F818F4E64000ED1D16 /* incomplete.png */,
-				36E634F918F4E64000ED1D16 /* plus-icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -377,14 +401,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E6350018F4F79100ED1D16 /* star-icon-unfavorited.png in Resources */,
+				36BEAF9C19A39DE600F5BE6F /* cell-background-list-hero.png in Resources */,
+				36BEAFA519A42D9800F5BE6F /* list-hero-button-normal.png in Resources */,
 				36E634FF18F4F79100ED1D16 /* star-icon-favorited.png in Resources */,
+				36162D2C19A3063C00B51108 /* ListHeroBG.png in Resources */,
 				3666227C18F1E9F000E1FE61 /* FavoritesCell.xib in Resources */,
 				36307A5118C39D58003BC0A2 /* ShoppingListViewController.xib in Resources */,
 				36307A5618C3C0C6003BC0A2 /* ShoppingListCell.xib in Resources */,
 				36307A5818C3E811003BC0A2 /* ic_drawer.png in Resources */,
 				36E634FA18F4E64000ED1D16 /* complete.png in Resources */,
+				36BEAFAB19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */,
+				36162D3119A30CCB00B51108 /* plus-icon.png in Resources */,
 				36307A2718C39C05003BC0A2 /* Images.xcassets in Resources */,
-				36E634FC18F4E64000ED1D16 /* plus-icon.png in Resources */,
 				36E634FB18F4E64000ED1D16 /* incomplete.png in Resources */,
 				36307A5D18C3E980003BC0A2 /* DrawerCell.xib in Resources */,
 				36307A4C18C39CD4003BC0A2 /* DrawerViewController.xib in Resources */,
@@ -392,6 +420,8 @@
 				36307A1318C39C05003BC0A2 /* InfoPlist.strings in Resources */,
 				36CBFC2718ED03CC0042039D /* FavoritesViewController.xib in Resources */,
 				36307A4718C39C91003BC0A2 /* ContainerViewController.xib in Resources */,
+				36955C3D195112B000693574 /* delete_icon.png in Resources */,
+				36162D2E19A3063C00B51108 /* ListHeroLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +429,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BEAFA619A42D9800F5BE6F /* list-hero-button-normal.png in Resources */,
+				36162D2F19A3063C00B51108 /* ListHeroLogo.png in Resources */,
+				36BEAF9D19A39DE600F5BE6F /* cell-background-list-hero.png in Resources */,
+				36162D2D19A3063C00B51108 /* ListHeroBG.png in Resources */,
+				36162D3219A30CCB00B51108 /* plus-icon.png in Resources */,
 				36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */,
+				36BEAFAC19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

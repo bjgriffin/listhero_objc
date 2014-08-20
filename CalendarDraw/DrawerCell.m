@@ -7,23 +7,19 @@
 //
 
 #import "DrawerCell.h"
+#import "DataManager.h"
 
 @implementation DrawerCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+- (void)setupDrawerCell {
+    _deleteImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *addItemGesture =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteList)];
+    addItemGesture.numberOfTapsRequired = 1;
+    [_deleteImageView addGestureRecognizer:addItemGesture];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)deleteList {
+    [self.delegate deleteListFromDrawer:_list];
 }
 
 @end

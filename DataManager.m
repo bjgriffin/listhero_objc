@@ -121,6 +121,21 @@
     [self saveManagedObjectContext];
 }
 
+- (void)deleteItem:(ListItem*)item {
+    [self.managedObjectContext deleteObject:item];
+    [self saveManagedObjectContext];
+}
+
+- (void)deleteList:(List*)list {
+    [self.managedObjectContext deleteObject:list];
+    [self saveManagedObjectContext];
+}
+
+- (void)deleteItemFromCurrentList:(List*)list item:(ListItem*)item {
+    [list removeItemsObject:item];
+    [self saveManagedObjectContext];
+}
+
 # pragma mark -- private methods
 
 - (ListItem*)createNewItem:(NSString*)name isFavorited:(BOOL)favorited details:(NSString*)details {

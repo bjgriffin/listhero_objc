@@ -84,6 +84,11 @@
                              _favoritesDrawerOpen = YES;
                          }
                      }];
+    for (UIView *view in _currentViewController.view.subviews) {
+        if (![view isKindOfClass:[UINavigationBar class]]) {
+            view.userInteractionEnabled = NO;
+        }
+    }
 }
 
 - (UIView*)getDrawer {
@@ -125,6 +130,12 @@
                              _drawerOpen = YES;
                          }
                      }];
+    
+    for (UIView *view in _currentViewController.view.subviews) {
+        if (![view isKindOfClass:[UINavigationBar class]]) {
+            view.userInteractionEnabled = NO;
+        }
+    }
 }
 
 - (void)moveToOriginalPosition {
@@ -153,6 +164,9 @@
                              [self showCenterViewWithShadow:NO withOffset:0];
                          }
                      }];
+    for (UIView *view in _currentViewController.view.subviews) {
+            view.userInteractionEnabled = YES;
+    }
 }
 
 - (void)showCenterViewWithShadow:(BOOL)value withOffset:(int)offset {

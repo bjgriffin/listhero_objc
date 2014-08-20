@@ -12,7 +12,7 @@
 
 @class ContainerViewController;
 
-@interface DrawerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DrawerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DrawerCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ContainerViewController *containerViewController;
 

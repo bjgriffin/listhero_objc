@@ -15,5 +15,6 @@
 @interface FavoritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) ContainerViewController *containerViewController;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *favoritedItems;
 
 @end

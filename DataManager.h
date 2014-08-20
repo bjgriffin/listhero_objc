@@ -20,6 +20,9 @@
 - (void)addItemToNewList:(ListItem*)item;
 - (void)updateItemFavorite:(ListItem*)item;
 - (void)updateItemComplete:(ListItem*)item;
+- (void)deleteItem:(ListItem*)item;
+- (void)deleteList:(List*)list;
+- (void)deleteItemFromCurrentList:(List*)list item:(ListItem*)item;
 - (NSArray*)fetchLists;
 - (NSArray*)fetchItems;
 @end

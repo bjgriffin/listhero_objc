@@ -40,6 +40,10 @@
     [[self tableView] registerNib:nib
            forCellReuseIdentifier:@"ShoppingListCell"];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.0];
+    self.tableView.allowsSelection = NO;
+    
     if (_currentList) {
         _navItem.title = _currentList.title;
     } else {
@@ -60,8 +64,7 @@
     addListButton = [self addNewListButton:@"New List"];
     [addListButton addTarget:self action:@selector(createList) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addListButton];
-    
-    [self adjustTableViewHeightToFitButton];
+    [self adjustTableView];
     
     UITapGestureRecognizer *addItemGesture =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addItem)];
     [_addItemButtonImage addGestureRecognizer:addItemGesture];
@@ -71,8 +74,21 @@
     [_favoritesBarButtonItem setAction:@selector(favoritesDrawerAction)];
 }
 
-- (void)adjustTableViewHeightToFitButton {
-    _tableViewHeight.constant -= addListButton.frame.size.height;
+- (void)adjustTableView {
+    CGRect rect = self.tableView.frame;
+
+    if (!self.navItem.title) {
+        _itemTextField.hidden = YES;
+        _addItemButtonImage.hidden = YES;
+        rect.origin.y -= _itemTextField.frame.size.height;
+    } else {
+        if (_itemTextField.hidden) {
+            _itemTextField.hidden = NO;
+            _addItemButtonImage.hidden = NO;
+            rect.origin.y += _itemTextField.frame.size.height;
+        }
+    }
+    self.tableView.frame = rect;
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,10 +103,10 @@
 
 - (UIButton*)addNewListButton:(NSString*)title {
     CGRect screenRect = [UIScreen mainScreen].bounds;
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, screenRect.size.height - [UIApplication sharedApplication].statusBarFrame.size.height - NAVIGATION_BAR_HEIGHT, screenRect.size.width, 67)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, screenRect.size.height - [UIApplication sharedApplication].statusBarFrame.size.height - (NAVIGATION_BAR_HEIGHT+5), screenRect.size.width, 67)];
     [button setTitleColor:[UIColor colorWithRed:(51.0/255.0) green:(51.0/255.0) blue:(51.0/255.0) alpha:1.0] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [button setBackgroundColor:[UIColor colorWithRed:(253.0/255.0) green:(230.0/255.0) blue:(125.0/255.0) alpha:0.5]];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"list-hero-button-normal"] forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:18];
     return button;
@@ -105,7 +121,7 @@
 }
 
 - (void)addItem {
-    if (![_itemTextField isEqual:@""]) {
+    if (![_itemTextField.text isEqual:@""]) {
         if (!_currentList) {
             [[DataManager sharedInstance] addNewItemToNewList:_itemTextField.text isFavorited:NO details:nil];
             _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
@@ -146,6 +162,7 @@
             [[DataManager sharedInstance] createList:[alertView textFieldAtIndex:0].text category:nil];
             _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
             _navItem.title = _currentList.title;
+            [self adjustTableView];
             [self.tableView reloadData];
             break;
         default:
@@ -171,11 +188,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ShoppingListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShoppingListCell"];
+    cell.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(255.0/255.0) blue:(255.0/255.0) alpha:0.8];
+    
     NSArray *items = [_currentList.items allObjects];
     ListItem *item = [items objectAtIndex:indexPath.row];
     cell.title.text = item.name;
     [cell setupItemCell:item];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSArray *items = [_currentList.items allObjects];
+        ListItem *item = [items objectAtIndex:indexPath.row];
+        [[DataManager sharedInstance] deleteItemFromCurrentList:_currentList item:item];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark -- FavoritesCell delegate methods
@@ -187,12 +219,20 @@
         [self.tableView reloadData];
     } else {
         if ([_currentList.items containsObject:item]) {
-            NSLog(@"Favorite already exist in list.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Already Done!" message:@"Favorite already exist in list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            alert.alertViewStyle = UIAlertViewStyleDefault;
+            [alert show];
         } else {
             [[DataManager sharedInstance] addItemToCurrentList:_currentList item:item];
             [self.tableView reloadData];
         }
     }
+}
+
+- (void)removeItemFromFavoritesList:(ListItem *)item {
+    [[DataManager sharedInstance] updateItemFavorite:item];
+    [_containerViewController.favoritesViewController.favoritedItems removeObject:item];
+    [_containerViewController.favoritesViewController.tableView reloadData];
 }
 
 @end

@@ -21,8 +21,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *addItemButtonImage;
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
 @property (strong, nonatomic) List *currentList;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
 @property (strong, nonatomic) ContainerViewController *containerViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+- (void)adjustTableView;
 @end

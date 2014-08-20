@@ -10,9 +10,10 @@
 #import "ShoppingListViewController.h"
 #import "DataManager.h"
 
+#define kFavoritesTitle @"Your Favorites"
+
 @interface FavoritesViewController ()
 {
-NSMutableArray *favoritedItems;
 }
 
 @end
@@ -34,8 +35,12 @@ NSMutableArray *favoritedItems;
     // Do any additional setup after loading the view from its nib.
     UINib *nib = [UINib nibWithNibName:@"FavoritesCell" bundle:nil];
     
-    [[self tableView] registerNib:nib
+    [self.tableView registerNib:nib
            forCellReuseIdentifier:@"FavoritesCell"];
+    self.tableView.allowsSelection = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.0];
+    [self.view setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(130.0/255.0) blue:(250.0/255.0) alpha:1.0]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,10 +52,10 @@ NSMutableArray *favoritedItems;
 #pragma mark - Private methods
 - (void)setupFavorites {
     NSArray *items = [[DataManager sharedInstance] fetchItems];
-    favoritedItems = [[NSMutableArray alloc] init];
+    _favoritedItems = [[NSMutableArray alloc] init];
     for(ListItem *item in items) {
         if (item.isFavorited.boolValue) {
-            [favoritedItems addObject:item];
+            [_favoritedItems addObject:item];
         }
     }
 }
@@ -63,13 +68,26 @@ NSMutableArray *favoritedItems;
     return 1;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [headerView setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.5]];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(80, -10, 150, 44)];
+    label.text=kFavoritesTitle;
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = [UIColor clearColor];
+    [headerView addSubview:label];
+    
+    return headerView;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [favoritedItems count];
+    return [_favoritedItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoritesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoritesCell"];
-    ListItem *item = [favoritedItems objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(255.0/255.0) blue:(255.0/255.0) alpha:0.3];
+    ListItem *item = [_favoritedItems objectAtIndex:indexPath.row];
     [cell setupFavoritesCell:item];
     [cell.titleLabel setText:item.name];
     cell.delegate = _containerViewController.shoppingListViewController;
@@ -78,20 +96,7 @@ NSMutableArray *favoritedItems;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *controller;
-    
-    switch (indexPath.row) {
-        case 0:
-            controller = [[ShoppingListViewController alloc] initWithNibName:@"ShoppingListViewController" bundle:nil];
-            if (controller.class != self.containerViewController.currentViewController.class) {
-                [self.containerViewController changeCurrentViewController:controller];
-            }
-            [self.containerViewController moveToOriginalPosition];
-            break;
-            
-        default:
-            break;
-    }
+    [self.containerViewController moveToOriginalPosition];
 }
 
 @end

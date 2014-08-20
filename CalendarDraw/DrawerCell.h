@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "List.h"
+
+@protocol DrawerCellDelegate <NSObject>
+
+- (void)deleteListFromDrawer:(List*)list;
+
+@end
 
 @interface DrawerCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *drawerOptionTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *deleteImageView;
+@property (weak, nonatomic) List *list;
+@property (weak, nonatomic) id<DrawerCellDelegate> delegate;
 
+- (void)setupDrawerCell;
 @end

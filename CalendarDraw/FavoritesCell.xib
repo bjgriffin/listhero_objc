@@ -23,15 +23,21 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-icon-unfavorited.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-pP-rft">
+                        <rect key="frame" x="266" y="5" width="34" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addImageView" destination="rmm-b9-GXw" id="Muz-PS-ERP"/>
+                <outlet property="favoritedImageView" destination="ZeS-pP-rft" id="Tff-dX-U1n"/>
                 <outlet property="titleLabel" destination="HsI-As-Dpp" id="Zju-Gu-nVF"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="plus-icon.png" width="34" height="34"/>
+        <image name="star-icon-unfavorited.png" width="34" height="34"/>
     </resources>
 </document>
