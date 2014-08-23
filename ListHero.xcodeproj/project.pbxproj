@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36162D2F19A3063C00B51108 /* ListHeroLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2B19A3063C00B51108 /* ListHeroLogo.png */; };
+		36307A0918C39C05003BC0A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0818C39C05003BC0A2 /* Foundation.framework */; };
+		36307A0B18C39C05003BC0A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */; };
+		36307A0D18C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
+		36307A2E18C39C05003BC0A2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A2D18C39C05003BC0A2 /* XCTest.framework */; };
+		36307A2F18C39C05003BC0A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0818C39C05003BC0A2 /* Foundation.framework */; };
+		36307A3018C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
+		36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36307A3618C39C05003BC0A2 /* InfoPlist.strings */; };
+		36307A3A18C39C05003BC0A2 /* ListHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A3918C39C05003BC0A2 /* ListHeroTests.m */; };
+		367572B719A4EDDF00029B37 /* delete-icon-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B119A4EDDF00029B37 /* delete-icon-normal.png */; };
+		367572B919A4EDDF00029B37 /* delete-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B219A4EDDF00029B37 /* delete-icon-selected.png */; };
+		367572BB19A4EDDF00029B37 /* list-hero-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B319A4EDDF00029B37 /* list-hero-button-selected.png */; };
+		367572BD19A4EDDF00029B37 /* plus-icon-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B419A4EDDF00029B37 /* plus-icon-normal.png */; };
+		367572BF19A4EDDF00029B37 /* plus-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B519A4EDDF00029B37 /* plus-icon-selected.png */; };
+		36B67FDC19A691D700EB465D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A58C41940F7DE00A3F4FB /* DataManager.m */; };
+		36B67FDD19A691D700EB465D /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878D194CA64A00D8DF56 /* ListItem.m */; };
+		36B67FDE19A691D700EB465D /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878A194CA64A00D8DF56 /* List.m */; };
+		36B67FDF19A691D700EB465D /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */; };
+		36B67FE019A691D700EB465D /* DrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5A18C3E96A003BC0A2 /* DrawerCell.m */; };
+		36B67FE119A691D700EB465D /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666227918F1E9D100E1FE61 /* FavoritesCell.m */; };
+		36B67FE219A691D700EB465D /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */; };
+		36B67FE319A691D700EB465D /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4918C39CD4003BC0A2 /* DrawerViewController.m */; };
+		36B67FE419A691D700EB465D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CBFC2418ED03CC0042039D /* FavoritesViewController.m */; };
+		36B67FE519A691D700EB465D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EB2D18C82B970028925E /* BaseViewController.m */; };
+		36B67FE619A691D700EB465D /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4418C39C91003BC0A2 /* ContainerViewController.m */; };
+		36B67FE719A691D700EB465D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A1818C39C05003BC0A2 /* AppDelegate.m */; };
+		36B67FE919A691FC00EB465D /* ShoppingListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */; };
+		36B67FEA19A691FC00EB465D /* DrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5C18C3E980003BC0A2 /* DrawerCell.xib */; };
+		36B67FEB19A691FC00EB465D /* FavoritesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */; };
+		36B67FEC19A691FC00EB465D /* ShoppingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */; };
+		36B67FED19A691FC00EB465D /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */; };
+		36B67FEE19A691FC00EB465D /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3683EB2E18C82B970028925E /* BaseViewController.xib */; };
+		36B67FEF19A691FC00EB465D /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36307A4518C39C91003BC0A2 /* ContainerViewController.xib */; };
+		36B67FF019A691FC00EB465D /* delete-icon-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B119A4EDDF00029B37 /* delete-icon-normal.png */; };
+		36B67FF119A691FC00EB465D /* delete-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B219A4EDDF00029B37 /* delete-icon-selected.png */; };
+		36B67FF219A691FC00EB465D /* list-hero-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B319A4EDDF00029B37 /* list-hero-button-selected.png */; };
+		36B67FF319A691FC00EB465D /* plus-icon-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B419A4EDDF00029B37 /* plus-icon-normal.png */; };
+		36B67FF419A691FC00EB465D /* plus-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 367572B519A4EDDF00029B37 /* plus-icon-selected.png */; };
+		36B67FF519A691FC00EB465D /* list-hero-bg-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */; };
+		36B67FF619A691FC00EB465D /* list-hero-button-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */; };
+		36B67FF719A691FC00EB465D /* ListHeroLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36162D2B19A3063C00B51108 /* ListHeroLogo.png */; };
+		36B67FF819A691FC00EB465D /* star-icon-favorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */; };
+		36B67FF919A691FC00EB465D /* star-icon-unfavorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */; };
+		36B67FFA19A691FC00EB465D /* complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F718F4E64000ED1D16 /* complete.png */; };
+		36B67FFB19A691FC00EB465D /* incomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E634F818F4E64000ED1D16 /* incomplete.png */; };
+		36BEAFA619A42D9800F5BE6F /* list-hero-button-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */; };
+		36BEAFAC19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */; };
+		36DB720719A69F0E000D57A3 /* ic_drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 36307A5718C3E811003BC0A2 /* ic_drawer.png */; };
+		36DB720919A6A0B8000D57A3 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A58C41940F7DE00A3F4FB /* DataManager.m */; };
+		36DB720A19A6A0B8000D57A3 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878D194CA64A00D8DF56 /* ListItem.m */; };
+		36DB720B19A6A0B8000D57A3 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648878A194CA64A00D8DF56 /* List.m */; };
+		36DB720C19A6A0B8000D57A3 /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */; };
+		36DB720D19A6A0B8000D57A3 /* DrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A5A18C3E96A003BC0A2 /* DrawerCell.m */; };
+		36DB720E19A6A0B8000D57A3 /* FavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666227918F1E9D100E1FE61 /* FavoritesCell.m */; };
+		36DB720F19A6A0B8000D57A3 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */; };
+		36DB721019A6A0B8000D57A3 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4918C39CD4003BC0A2 /* DrawerViewController.m */; };
+		36DB721119A6A0B8000D57A3 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CBFC2418ED03CC0042039D /* FavoritesViewController.m */; };
+		36DB721219A6A0B8000D57A3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EB2D18C82B970028925E /* BaseViewController.m */; };
+		36DB721319A6A0B8000D57A3 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A4418C39C91003BC0A2 /* ContainerViewController.m */; };
+		36DB721419A6A0B8000D57A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A1818C39C05003BC0A2 /* AppDelegate.m */; };
+		36DB721519A6A2DE000D57A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A1418C39C05003BC0A2 /* main.m */; };
+		36DB721619A6A326000D57A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36307A2618C39C05003BC0A2 /* Images.xcassets */; };
+		36DB721719A6A40F000D57A3 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */; };
+		36DB721819A6A4E0000D57A3 /* Lists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */; };
+		36DB721919A6A540000D57A3 /* ListHero-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36307A1018C39C05003BC0A2 /* ListHero-Info.plist */; };
+		36DB721A19A6A540000D57A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36307A1118C39C05003BC0A2 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36307A3118C39C05003BC0A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 363079FD18C39C05003BC0A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36307A0418C39C05003BC0A2;
+			remoteInfo = CalendarDraw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36162D2B19A3063C00B51108 /* ListHeroLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListHeroLogo.png; sourceTree = "<group>"; };
+		36307A0518C39C05003BC0A2 /* ListHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36307A0818C39C05003BC0A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36307A0C18C39C05003BC0A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36307A1018C39C05003BC0A2 /* ListHero-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ListHero-Info.plist"; sourceTree = "<group>"; };
+		36307A1218C39C05003BC0A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36307A1418C39C05003BC0A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36307A1618C39C05003BC0A2 /* ListHero-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ListHero-Prefix.pch"; sourceTree = "<group>"; };
+		36307A1718C39C05003BC0A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36307A1818C39C05003BC0A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36307A2618C39C05003BC0A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36307A2C18C39C05003BC0A2 /* ListHeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListHeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36307A2D18C39C05003BC0A2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		36307A3518C39C05003BC0A2 /* ListHeroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ListHeroTests-Info.plist"; sourceTree = "<group>"; };
+		36307A3718C39C05003BC0A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36307A3918C39C05003BC0A2 /* ListHeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListHeroTests.m; sourceTree = "<group>"; };
+		36307A4318C39C91003BC0A2 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		36307A4418C39C91003BC0A2 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		36307A4518C39C91003BC0A2 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
+		36307A4818C39CD4003BC0A2 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		36307A4918C39CD4003BC0A2 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
+		36307A4D18C39D58003BC0A2 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
+		36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
+		36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingListViewController.xib; sourceTree = "<group>"; };
+		36307A5218C3C08D003BC0A2 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListCell.h; sourceTree = "<group>"; };
+		36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListCell.m; sourceTree = "<group>"; };
+		36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingListCell.xib; sourceTree = "<group>"; };
+		36307A5718C3E811003BC0A2 /* ic_drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_drawer.png; sourceTree = "<group>"; };
+		36307A5918C3E96A003BC0A2 /* DrawerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerCell.h; sourceTree = "<group>"; };
+		36307A5A18C3E96A003BC0A2 /* DrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerCell.m; sourceTree = "<group>"; };
+		36307A5C18C3E980003BC0A2 /* DrawerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerCell.xib; sourceTree = "<group>"; };
+		36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lists.xcdatamodel; sourceTree = "<group>"; };
+		36488789194CA64A00D8DF56 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		3648878A194CA64A00D8DF56 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		3648878C194CA64A00D8DF56 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		3648878D194CA64A00D8DF56 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
+		3666227818F1E9D100E1FE61 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
+		3666227918F1E9D100E1FE61 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
+		3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
+		367572B119A4EDDF00029B37 /* delete-icon-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon-normal.png"; sourceTree = "<group>"; };
+		367572B219A4EDDF00029B37 /* delete-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon-selected.png"; sourceTree = "<group>"; };
+		367572B319A4EDDF00029B37 /* list-hero-button-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-hero-button-selected.png"; sourceTree = "<group>"; };
+		367572B419A4EDDF00029B37 /* plus-icon-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon-normal.png"; sourceTree = "<group>"; };
+		367572B519A4EDDF00029B37 /* plus-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon-selected.png"; sourceTree = "<group>"; };
+		3683EB2C18C82B970028925E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3683EB2D18C82B970028925E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		3683EB2E18C82B970028925E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		368A58C31940F7DE00A3F4FB /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		368A58C41940F7DE00A3F4FB /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-hero-button-normal.png"; sourceTree = "<group>"; };
+		36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-hero-bg-blue.png"; sourceTree = "<group>"; };
+		36CBFC2318ED03CC0042039D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		36CBFC2418ED03CC0042039D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		36E634F718F4E64000ED1D16 /* complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complete.png; sourceTree = "<group>"; };
+		36E634F818F4E64000ED1D16 /* incomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incomplete.png; sourceTree = "<group>"; };
+		36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-favorited.png"; sourceTree = "<group>"; };
+		36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon-unfavorited.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36307A0218C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A0B18C39C05003BC0A2 /* CoreGraphics.framework in Frameworks */,
+				36307A0D18C39C05003BC0A2 /* UIKit.framework in Frameworks */,
+				36307A0918C39C05003BC0A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2918C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36307A2E18C39C05003BC0A2 /* XCTest.framework in Frameworks */,
+				36307A3018C39C05003BC0A2 /* UIKit.framework in Frameworks */,
+				36307A2F18C39C05003BC0A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		363079FC18C39C05003BC0A2 = {
+			isa = PBXGroup;
+			children = (
+				36307A0E18C39C05003BC0A2 /* ListHero */,
+				36307A3318C39C05003BC0A2 /* ListHeroTests */,
+				36307A0718C39C05003BC0A2 /* Frameworks */,
+				36307A0618C39C05003BC0A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36307A0618C39C05003BC0A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36307A0518C39C05003BC0A2 /* ListHero.app */,
+				36307A2C18C39C05003BC0A2 /* ListHeroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36307A0718C39C05003BC0A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36307A0818C39C05003BC0A2 /* Foundation.framework */,
+				36307A0A18C39C05003BC0A2 /* CoreGraphics.framework */,
+				36307A0C18C39C05003BC0A2 /* UIKit.framework */,
+				36307A2D18C39C05003BC0A2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36307A0E18C39C05003BC0A2 /* ListHero */ = {
+			isa = PBXGroup;
+			children = (
+				368A58BC1940F47C00A3F4FB /* CoreData */,
+				366E8714193FEBA200792301 /* Cells */,
+				366E8713193FEB9B00792301 /* Views */,
+				366E8712193FEB9100792301 /* ViewControllers */,
+				36307A1718C39C05003BC0A2 /* AppDelegate.h */,
+				36307A1818C39C05003BC0A2 /* AppDelegate.m */,
+				36307A2618C39C05003BC0A2 /* Images.xcassets */,
+				36307A0F18C39C05003BC0A2 /* Supporting Files */,
+				36E634F618F4E61D00ED1D16 /* Resources */,
+			);
+			path = ListHero;
+			sourceTree = "<group>";
+		};
+		36307A0F18C39C05003BC0A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36307A1618C39C05003BC0A2 /* ListHero-Prefix.pch */,
+				36307A5718C3E811003BC0A2 /* ic_drawer.png */,
+				36307A1018C39C05003BC0A2 /* ListHero-Info.plist */,
+				36307A1118C39C05003BC0A2 /* InfoPlist.strings */,
+				36307A1418C39C05003BC0A2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36307A3318C39C05003BC0A2 /* ListHeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				36307A3918C39C05003BC0A2 /* ListHeroTests.m */,
+				36307A3418C39C05003BC0A2 /* Supporting Files */,
+			);
+			path = ListHeroTests;
+			sourceTree = "<group>";
+		};
+		36307A3418C39C05003BC0A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36307A3518C39C05003BC0A2 /* ListHeroTests-Info.plist */,
+				36307A3618C39C05003BC0A2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		366E8712193FEB9100792301 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36307A4D18C39D58003BC0A2 /* ShoppingListViewController.h */,
+				36307A4E18C39D58003BC0A2 /* ShoppingListViewController.m */,
+				36307A4F18C39D58003BC0A2 /* ShoppingListViewController.xib */,
+				366E8716193FEBE100792301 /* Drawers */,
+				366E8715193FEBB800792301 /* Common */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		366E8713193FEB9B00792301 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		366E8714193FEBA200792301 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				36307A5218C3C08D003BC0A2 /* ShoppingListCell.h */,
+				36307A5318C3C08D003BC0A2 /* ShoppingListCell.m */,
+				36307A5518C3C0C6003BC0A2 /* ShoppingListCell.xib */,
+				36307A5918C3E96A003BC0A2 /* DrawerCell.h */,
+				36307A5A18C3E96A003BC0A2 /* DrawerCell.m */,
+				36307A5C18C3E980003BC0A2 /* DrawerCell.xib */,
+				3666227818F1E9D100E1FE61 /* FavoritesCell.h */,
+				3666227918F1E9D100E1FE61 /* FavoritesCell.m */,
+				3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		366E8715193FEBB800792301 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3683EB2C18C82B970028925E /* BaseViewController.h */,
+				3683EB2D18C82B970028925E /* BaseViewController.m */,
+				3683EB2E18C82B970028925E /* BaseViewController.xib */,
+				36307A4318C39C91003BC0A2 /* ContainerViewController.h */,
+				36307A4418C39C91003BC0A2 /* ContainerViewController.m */,
+				36307A4518C39C91003BC0A2 /* ContainerViewController.xib */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		366E8716193FEBE100792301 /* Drawers */ = {
+			isa = PBXGroup;
+			children = (
+				36307A4818C39CD4003BC0A2 /* DrawerViewController.h */,
+				36307A4918C39CD4003BC0A2 /* DrawerViewController.m */,
+				36307A4A18C39CD4003BC0A2 /* DrawerViewController.xib */,
+				36CBFC2318ED03CC0042039D /* FavoritesViewController.h */,
+				36CBFC2418ED03CC0042039D /* FavoritesViewController.m */,
+				36CBFC2518ED03CC0042039D /* FavoritesViewController.xib */,
+			);
+			name = Drawers;
+			sourceTree = "<group>";
+		};
+		368A58BC1940F47C00A3F4FB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				368A58C31940F7DE00A3F4FB /* DataManager.h */,
+				368A58C41940F7DE00A3F4FB /* DataManager.m */,
+				36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */,
+				3648878C194CA64A00D8DF56 /* ListItem.h */,
+				3648878D194CA64A00D8DF56 /* ListItem.m */,
+				36488789194CA64A00D8DF56 /* List.h */,
+				3648878A194CA64A00D8DF56 /* List.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		36E634F618F4E61D00ED1D16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				367572B119A4EDDF00029B37 /* delete-icon-normal.png */,
+				367572B219A4EDDF00029B37 /* delete-icon-selected.png */,
+				367572B319A4EDDF00029B37 /* list-hero-button-selected.png */,
+				367572B419A4EDDF00029B37 /* plus-icon-normal.png */,
+				367572B519A4EDDF00029B37 /* plus-icon-selected.png */,
+				36BEAFAA19A4331C00F5BE6F /* list-hero-bg-blue.png */,
+				36BEAFA419A42D9800F5BE6F /* list-hero-button-normal.png */,
+				36162D2B19A3063C00B51108 /* ListHeroLogo.png */,
+				36E634FD18F4F79100ED1D16 /* star-icon-favorited.png */,
+				36E634FE18F4F79100ED1D16 /* star-icon-unfavorited.png */,
+				36E634F718F4E64000ED1D16 /* complete.png */,
+				36E634F818F4E64000ED1D16 /* incomplete.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36307A0418C39C05003BC0A2 /* ListHero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36307A3D18C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "ListHero" */;
+			buildPhases = (
+				36307A0118C39C05003BC0A2 /* Sources */,
+				36307A0218C39C05003BC0A2 /* Frameworks */,
+				36307A0318C39C05003BC0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ListHero;
+			productName = CalendarDraw;
+			productReference = 36307A0518C39C05003BC0A2 /* ListHero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36307A2B18C39C05003BC0A2 /* ListHeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36307A4018C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "ListHeroTests" */;
+			buildPhases = (
+				36307A2818C39C05003BC0A2 /* Sources */,
+				36307A2918C39C05003BC0A2 /* Frameworks */,
+				36307A2A18C39C05003BC0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36307A3218C39C05003BC0A2 /* PBXTargetDependency */,
+			);
+			name = ListHeroTests;
+			productName = CalendarDrawTests;
+			productReference = 36307A2C18C39C05003BC0A2 /* ListHeroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		363079FD18C39C05003BC0A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "BJ Griffin";
+				TargetAttributes = {
+					36307A2B18C39C05003BC0A2 = {
+						TestTargetID = 36307A0418C39C05003BC0A2;
+					};
+				};
+			};
+			buildConfigurationList = 36307A0018C39C05003BC0A2 /* Build configuration list for PBXProject "ListHero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 363079FC18C39C05003BC0A2;
+			productRefGroup = 36307A0618C39C05003BC0A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36307A0418C39C05003BC0A2 /* ListHero */,
+				36307A2B18C39C05003BC0A2 /* ListHeroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36307A0318C39C05003BC0A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DB721919A6A540000D57A3 /* ListHero-Info.plist in Resources */,
+				36DB721A19A6A540000D57A3 /* InfoPlist.strings in Resources */,
+				36DB721719A6A40F000D57A3 /* FavoritesViewController.xib in Resources */,
+				36DB721619A6A326000D57A3 /* Images.xcassets in Resources */,
+				36DB720719A69F0E000D57A3 /* ic_drawer.png in Resources */,
+				36B67FE919A691FC00EB465D /* ShoppingListCell.xib in Resources */,
+				36B67FEA19A691FC00EB465D /* DrawerCell.xib in Resources */,
+				36B67FEB19A691FC00EB465D /* FavoritesCell.xib in Resources */,
+				36B67FEC19A691FC00EB465D /* ShoppingListViewController.xib in Resources */,
+				36B67FED19A691FC00EB465D /* DrawerViewController.xib in Resources */,
+				36B67FEE19A691FC00EB465D /* BaseViewController.xib in Resources */,
+				36B67FEF19A691FC00EB465D /* ContainerViewController.xib in Resources */,
+				36B67FF019A691FC00EB465D /* delete-icon-normal.png in Resources */,
+				36B67FF119A691FC00EB465D /* delete-icon-selected.png in Resources */,
+				36B67FF219A691FC00EB465D /* list-hero-button-selected.png in Resources */,
+				36B67FF319A691FC00EB465D /* plus-icon-normal.png in Resources */,
+				36B67FF419A691FC00EB465D /* plus-icon-selected.png in Resources */,
+				36B67FF519A691FC00EB465D /* list-hero-bg-blue.png in Resources */,
+				36B67FF619A691FC00EB465D /* list-hero-button-normal.png in Resources */,
+				36B67FF719A691FC00EB465D /* ListHeroLogo.png in Resources */,
+				36B67FF819A691FC00EB465D /* star-icon-favorited.png in Resources */,
+				36B67FF919A691FC00EB465D /* star-icon-unfavorited.png in Resources */,
+				36B67FFA19A691FC00EB465D /* complete.png in Resources */,
+				36B67FFB19A691FC00EB465D /* incomplete.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2A18C39C05003BC0A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BEAFA619A42D9800F5BE6F /* list-hero-button-normal.png in Resources */,
+				36162D2F19A3063C00B51108 /* ListHeroLogo.png in Resources */,
+				367572B719A4EDDF00029B37 /* delete-icon-normal.png in Resources */,
+				36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */,
+				367572B919A4EDDF00029B37 /* delete-icon-selected.png in Resources */,
+				36BEAFAC19A4331C00F5BE6F /* list-hero-bg-blue.png in Resources */,
+				367572BF19A4EDDF00029B37 /* plus-icon-selected.png in Resources */,
+				367572BB19A4EDDF00029B37 /* list-hero-button-selected.png in Resources */,
+				367572BD19A4EDDF00029B37 /* plus-icon-normal.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36307A0118C39C05003BC0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DB721819A6A4E0000D57A3 /* Lists.xcdatamodeld in Sources */,
+				36DB721519A6A2DE000D57A3 /* main.m in Sources */,
+				36B67FDC19A691D700EB465D /* DataManager.m in Sources */,
+				36B67FDD19A691D700EB465D /* ListItem.m in Sources */,
+				36B67FDE19A691D700EB465D /* List.m in Sources */,
+				36B67FDF19A691D700EB465D /* ShoppingListCell.m in Sources */,
+				36B67FE019A691D700EB465D /* DrawerCell.m in Sources */,
+				36B67FE119A691D700EB465D /* FavoritesCell.m in Sources */,
+				36B67FE219A691D700EB465D /* ShoppingListViewController.m in Sources */,
+				36B67FE319A691D700EB465D /* DrawerViewController.m in Sources */,
+				36B67FE419A691D700EB465D /* FavoritesViewController.m in Sources */,
+				36B67FE519A691D700EB465D /* BaseViewController.m in Sources */,
+				36B67FE619A691D700EB465D /* ContainerViewController.m in Sources */,
+				36B67FE719A691D700EB465D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36307A2818C39C05003BC0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DB720919A6A0B8000D57A3 /* DataManager.m in Sources */,
+				36DB720A19A6A0B8000D57A3 /* ListItem.m in Sources */,
+				36DB720B19A6A0B8000D57A3 /* List.m in Sources */,
+				36DB720C19A6A0B8000D57A3 /* ShoppingListCell.m in Sources */,
+				36DB720D19A6A0B8000D57A3 /* DrawerCell.m in Sources */,
+				36DB720E19A6A0B8000D57A3 /* FavoritesCell.m in Sources */,
+				36DB720F19A6A0B8000D57A3 /* ShoppingListViewController.m in Sources */,
+				36DB721019A6A0B8000D57A3 /* DrawerViewController.m in Sources */,
+				36DB721119A6A0B8000D57A3 /* FavoritesViewController.m in Sources */,
+				36DB721219A6A0B8000D57A3 /* BaseViewController.m in Sources */,
+				36DB721319A6A0B8000D57A3 /* ContainerViewController.m in Sources */,
+				36DB721419A6A0B8000D57A3 /* AppDelegate.m in Sources */,
+				36307A3A18C39C05003BC0A2 /* ListHeroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36307A3218C39C05003BC0A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36307A0418C39C05003BC0A2 /* ListHero */;
+			targetProxy = 36307A3118C39C05003BC0A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36307A1118C39C05003BC0A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36307A1218C39C05003BC0A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		36307A3618C39C05003BC0A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36307A3718C39C05003BC0A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36307A3B18C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		36307A3C18C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		36307A3E18C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListHero/ListHero-Prefix.pch";
+				INFOPLIST_FILE = "ListHero/ListHero-Info.plist";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				"OTHER_LDFLAGS[arch=*]" = "-licucore";
+				PRODUCT_NAME = ListHero;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36307A3F18C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListHero/ListHero-Prefix.pch";
+				INFOPLIST_FILE = "ListHero/ListHero-Info.plist";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				"OTHER_LDFLAGS[arch=*]" = "-licucore";
+				PRODUCT_NAME = ListHero;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		36307A4118C39C05003BC0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ListHero.app/ListHero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListHero/ListHero-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ListHeroTests/ListHeroTests-Info.plist";
+				PRODUCT_NAME = ListHeroTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		36307A4218C39C05003BC0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ListHero.app/ListHero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListHero/ListHero-Prefix.pch";
+				INFOPLIST_FILE = "ListHeroTests/ListHeroTests-Info.plist";
+				PRODUCT_NAME = ListHeroTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36307A0018C39C05003BC0A2 /* Build configuration list for PBXProject "ListHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A3B18C39C05003BC0A2 /* Debug */,
+				36307A3C18C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36307A3D18C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "ListHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A3E18C39C05003BC0A2 /* Debug */,
+				36307A3F18C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36307A4018C39C05003BC0A2 /* Build configuration list for PBXNativeTarget "ListHeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36307A4118C39C05003BC0A2 /* Debug */,
+				36307A4218C39C05003BC0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36488786194CA4FA00D8DF56 /* Lists.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */,
+			);
+			currentVersion = 36488787194CA4FA00D8DF56 /* Lists.xcdatamodel */;
+			path = Lists.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 363079FD18C39C05003BC0A2 /* Project object */;
+}

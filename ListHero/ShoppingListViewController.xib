@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoppingListViewController">
+            <connections>
+                <outlet property="backBarButtonItem" destination="Ci8-pC-Tdj" id="lNg-He-QYc"/>
+                <outlet property="favoritesBarButtonItem" destination="c79-FW-FOe" id="ft6-xc-AWm"/>
+                <outlet property="itemTextField" destination="8Gq-f0-HDg" id="rd5-Ww-CL2"/>
+                <outlet property="navItem" destination="qvP-3F-yyt" id="LCt-f9-OS3"/>
+                <outlet property="navigationItem" destination="qvP-3F-yyt" id="1Ze-RT-AcN"/>
+                <outlet property="plusButton" destination="UME-Lf-cGh" id="BpA-ia-jKn"/>
+                <outlet property="tableView" destination="DuB-M5-6ma" id="047-ET-UQF"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list-hero-bg-blue.png" id="Dma-ga-Nhm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <navigationBar contentMode="scaleToFill" id="TtO-rq-7Ux">
+                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.086274512110000007" green="0.270588249" blue="0.55294120309999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem id="qvP-3F-yyt">
+                            <barButtonItem key="leftBarButtonItem" image="ic_drawer.png" id="Ci8-pC-Tdj"/>
+                            <barButtonItem key="rightBarButtonItem" image="star-icon-favorited.png" id="c79-FW-FOe"/>
+                        </navigationItem>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5a4-qa-Ffm"/>
+                    </connections>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DuB-M5-6ma">
+                    <rect key="frame" x="0.0" y="124" width="320" height="444"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LZQ-JS-4Si"/>
+                        <outlet property="delegate" destination="-1" id="FQq-DO-2CH"/>
+                    </connections>
+                </tableView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your item!" minimumFontSize="17" id="8Gq-f0-HDg">
+                    <rect key="frame" x="20" y="64" width="237" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UME-Lf-cGh">
+                    <rect key="frame" x="265" y="73" width="34" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="plus-icon-normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="plus-icon-selected.png"/>
+                    <state key="highlighted" image="plus-icon-selected.png"/>
+                    <connections>
+                        <action selector="addItemAction:" destination="-1" eventType="touchUpInside" id="3SR-TL-udc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.50980395078659058" blue="0.9803922176361084" alpha="1" colorSpace="deviceRGB"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_drawer.png" width="32" height="32"/>
+        <image name="list-hero-bg-blue.png" width="320" height="568"/>
+        <image name="plus-icon-normal.png" width="34" height="34"/>
+        <image name="plus-icon-selected.png" width="34" height="34"/>
+        <image name="star-icon-favorited.png" width="34" height="34"/>
+    </resources>
+</document>
