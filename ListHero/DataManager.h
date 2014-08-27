@@ -19,6 +19,7 @@
 - (void)addItemToCurrentList:(List*)list item:(ListItem*)item;
 - (void)addItemToNewList:(ListItem*)item;
 - (void)updateItemFavorite:(ListItem*)item;
+- (void)updateFavoriteItemsWithIdenticalNames:(NSString*)itemName;
 - (void)updateItemComplete:(ListItem*)item;
 - (void)deleteItem:(ListItem*)item;
 - (void)deleteList:(List*)list;

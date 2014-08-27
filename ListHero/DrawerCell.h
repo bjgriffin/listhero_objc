@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *drawerOptionTitle;
 @property (weak, nonatomic) List *list;
 @property (weak, nonatomic) id<DrawerCellDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
+- (void)iPadResizeFrames;
 - (IBAction)deleteAction:(id)sender;
 @end

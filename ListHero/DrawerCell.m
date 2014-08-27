@@ -15,4 +15,17 @@
     [self.delegate deleteListFromDrawer:_list];
 }
 
+- (void)iPadResizeFrames {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGRect titleRect = _drawerOptionTitle.frame;
+        CGRect deleteRect = _deleteButton.frame;
+        
+        titleRect.size.width = 230;
+        deleteRect.origin.x = 250;
+        
+        _drawerOptionTitle.frame = titleRect;
+        _deleteButton.frame = deleteRect;
+    }
+}
+
 @end

@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
+#import "ShoppingListViewController.h"
+#import "FavoritesViewController.h"
+#import "DrawerViewController.h"
 #import "List.h"
+
+@class ContainerViewController, ShoppingListViewController, FavoritesViewController, DrawerViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ContainerViewController *containerViewController;
+@property (strong, nonatomic) ShoppingListViewController *shoppingListViewController;
+@property (strong, nonatomic) FavoritesViewController *favoritesViewController;
+@property (strong, nonatomic) DrawerViewController *drawerViewController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

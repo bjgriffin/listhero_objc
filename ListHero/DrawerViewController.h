@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "DrawerCell.h"
 #import "ContainerViewController.h"
 
@@ -15,5 +16,6 @@
 @interface DrawerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DrawerCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ContainerViewController *containerViewController;
+@property (strong, nonatomic) NSMutableArray *lists;
 
 @end

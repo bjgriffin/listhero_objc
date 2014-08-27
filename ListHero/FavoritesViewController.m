@@ -11,6 +11,7 @@
 #import "DataManager.h"
 
 #define kFavoritesTitle @"Your Favorites"
+#define kNavigationBarPlusStatusBarHeight 64
 
 @interface FavoritesViewController ()
 {
@@ -40,6 +41,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.0];
     [self.view setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(130.0/255.0) blue:(250.0/255.0) alpha:1.0]];
+    [self iPadAdjustFavoritesListHeight];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.title = @"Favorites";
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,19 +53,39 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private methods
 - (void)setupFavorites {
+    BOOL isCached = NO;
     NSArray *items = [[DataManager sharedInstance] fetchItems];
     _favoritedItems = [[NSMutableArray alloc] init];
     for(ListItem *item in items) {
         if (item.isFavorited.boolValue) {
-            [_favoritedItems addObject:item];
+            for(ListItem *cachedItem in _favoritedItems) {
+                if ([item.name isEqual:cachedItem.name]) {
+                    isCached = YES;
+                    break;
+                }
+            }
+            if (!isCached) {
+                [_favoritedItems addObject:item];
+            }
         }
     }
-    items = nil;
+}
+
+- (void)iPadAdjustFavoritesListHeight {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGRect rect = self.tableView.frame;
+        rect.origin.y += kNavigationBarPlusStatusBarHeight;
+        self.tableView.frame = rect;
+    }
 }
 
 #pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    float cellHeight = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 54 : 44;
+    return cellHeight;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -69,7 +95,14 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [headerView setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.5]];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(80, -10, 150, 44)];
+    
+    UILabel *label;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        label = [[UILabel alloc] initWithFrame:CGRectMake(15, -10, 150, 44)];
+    } else {
+        label = [[UILabel alloc] initWithFrame:CGRectMake(75, -10, 150, 44)];
+    }
+    
     label.text=kFavoritesTitle;
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
@@ -88,13 +121,19 @@
     ListItem *item = [_favoritedItems objectAtIndex:indexPath.row];
     [cell setupFavoritesCell:item];
     [cell.titleLabel setText:item.name];
-    cell.delegate = _containerViewController.shoppingListViewController;
-    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        cell.delegate = delegate.shoppingListViewController;
+    } else {
+        cell.delegate = _containerViewController.shoppingListViewController;
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.containerViewController moveToOriginalPosition];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        [self.containerViewController moveToOriginalPosition];
+    }
 }
 
 @end

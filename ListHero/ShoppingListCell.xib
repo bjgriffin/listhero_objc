@@ -13,23 +13,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="incomplete.png" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-Ud-z05">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incomplete.png" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-Ud-z05">
                         <rect key="frame" x="15" y="4" width="34" height="34"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="adY-oZ-aOi"/>
+                            <constraint firstAttribute="height" constant="34" id="wfY-Kq-CYK"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-sp-hGt">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-sp-hGt">
                         <rect key="frame" x="62" y="11" width="150" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="750" constant="21" id="4wF-be-IMC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-icon-unfavorited.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Gn-Wd-E1N">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-icon-unfavorited.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Gn-Wd-E1N">
                         <rect key="frame" x="266" y="5" width="34" height="34"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-q5-X2H">
-                        <rect key="frame" x="220" y="6" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="Ly0-ar-NkE"/>
+                            <constraint firstAttribute="height" constant="34" id="gab-Ul-2Ik"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-q5-X2H">
+                        <rect key="frame" x="204" y="6" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="Z7x-hl-4Oa"/>
+                            <constraint firstAttribute="height" constant="32" id="gP7-2A-Q77"/>
+                        </constraints>
                         <state key="normal" image="delete-icon-normal.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -40,9 +55,21 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="PdY-q5-X2H" secondAttribute="centerY" constant="-0.5" id="0TU-cf-Ezx"/>
+                    <constraint firstItem="ARz-Ud-z05" firstAttribute="leading" secondItem="UpH-NT-sUU" secondAttribute="leading" constant="15" id="85W-5h-Odo"/>
+                    <constraint firstItem="hmx-sp-hGt" firstAttribute="leading" secondItem="ARz-Ud-z05" secondAttribute="trailing" priority="750" constant="13" id="AEc-Fy-kmW"/>
+                    <constraint firstAttribute="trailing" secondItem="3Gn-Wd-E1N" secondAttribute="trailing" constant="20" id="Ckr-Vh-xS2"/>
+                    <constraint firstItem="PdY-q5-X2H" firstAttribute="leading" secondItem="hmx-sp-hGt" secondAttribute="trailing" priority="750" id="IFb-pF-Fp3"/>
+                    <constraint firstAttribute="centerY" secondItem="3Gn-Wd-E1N" secondAttribute="centerY" constant="-0.5" id="Mj7-rQ-Hav"/>
+                    <constraint firstAttribute="centerY" secondItem="hmx-sp-hGt" secondAttribute="centerY" id="PYQ-lr-y6L"/>
+                    <constraint firstItem="3Gn-Wd-E1N" firstAttribute="leading" secondItem="PdY-q5-X2H" secondAttribute="trailing" priority="750" constant="30" id="ask-jd-d3B"/>
+                    <constraint firstAttribute="centerY" secondItem="ARz-Ud-z05" secondAttribute="centerY" constant="0.5" id="iM9-as-amr"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="checkboxImageView" destination="ARz-Ud-z05" id="9eS-QP-rYV"/>
+                <outlet property="deleteButton" destination="PdY-q5-X2H" id="lil-b2-2H1"/>
                 <outlet property="favoritedImageView" destination="3Gn-Wd-E1N" id="Z84-kh-xoQ"/>
                 <outlet property="title" destination="hmx-sp-hGt" id="aFD-db-3PX"/>
             </connections>

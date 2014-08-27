@@ -102,6 +102,17 @@
     return items;
 }
 
+- (NSArray*)fetchItemsWithIdenticalNames:(NSString*)itemName {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"ListItem" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", itemName];
+    [request setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    return results;
+}
+
 - (void)updateItemFavorite:(ListItem*)item {
     ListItem *fetchedItem = [self fetchTargetItem:item];
     if (item.isFavorited.boolValue) {
@@ -109,6 +120,20 @@
     } else {
         fetchedItem.isFavorited = @(1);
     }
+    [self saveManagedObjectContext];
+}
+
+- (void)updateFavoriteItemsWithIdenticalNames:(NSString*)itemName {
+    NSArray *fetchedItems = [self fetchItemsWithIdenticalNames:itemName];
+    
+    for (ListItem *item in fetchedItems) {
+        if (item.isFavorited.boolValue) {
+            item.isFavorited = @(0);
+        } else {
+            item.isFavorited = @(1);
+        }
+    }
+
     [self saveManagedObjectContext];
 }
 

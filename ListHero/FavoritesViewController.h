@@ -16,5 +16,5 @@
 @property (weak, nonatomic) ContainerViewController *containerViewController;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *favoritedItems;
-
+- (void)setupFavorites;
 @end

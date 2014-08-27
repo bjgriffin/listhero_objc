@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIImageView *checkboxImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *favoritedImageView;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (strong, nonatomic) id<ShoppingListCellDelegate> delegate;
 @property (weak, nonatomic) ListItem *listItem;
 

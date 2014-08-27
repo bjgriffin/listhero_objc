@@ -8,6 +8,7 @@
 
 #import "ShoppingListCell.h"
 #import "DataManager.h"
+#import "AppDelegate.h"
 
 @implementation ShoppingListCell
 
@@ -31,6 +32,8 @@
     [self updateCompleted];
 }
 
+
+
 - (void)updateFavorited {
     if (_listItem.isFavorited.boolValue) {
         [_favoritedImageView setImage:[UIImage imageNamed: @"star-icon-favorited.png"]];
@@ -48,9 +51,14 @@
 }
 
 - (void)updateFavoritedData {
-    [[DataManager sharedInstance] updateItemFavorite:_listItem];
+    [[DataManager sharedInstance] updateFavoriteItemsWithIdenticalNames:_listItem.name];
     
     [self updateFavorited];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        [delegate.favoritesViewController setupFavorites];
+        [delegate.favoritesViewController.tableView reloadData];
+    }
 }
 
 - (void)updateCompletedData {

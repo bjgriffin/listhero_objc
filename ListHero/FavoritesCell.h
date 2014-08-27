@@ -19,6 +19,7 @@
 @interface FavoritesCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *favoritedImageView;
+@property (weak, nonatomic) IBOutlet UIButton *plusButton;
 @property (nonatomic, strong) id<FavoritesCellDelegate> delegate;
 @property (strong, nonatomic) ListItem *listItem;
 - (IBAction)addItemAction:(id)sender;

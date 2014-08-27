@@ -7,34 +7,26 @@
 //
 
 #import "ShoppingListViewController.h"
-#import "ShoppingListCell.h"
 #import "DataManager.h"
 
 #define NAVIGATION_BAR_HEIGHT 44
+#define ADD_UNIT_ID_BOTTOM_BANNER @"ca-app-pub-4183203351642526/8413792290"
 
 @interface ShoppingListViewController () {
     UIButton *addListButton;
     UIAlertView *createListAlertView;
     NSArray *sortedListItems;
+    GADBannerView *bannerView;
 }
 
 @end
 
 @implementation ShoppingListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     UINib *nib = [UINib nibWithNibName:@"ShoppingListCell" bundle:nil];
     
     [[self tableView] registerNib:nib
@@ -43,7 +35,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.0];
     self.tableView.allowsSelection = NO;
-    
     if (_currentList) {
         _navItem.title = _currentList.title;
     } else {
@@ -61,14 +52,21 @@
         }
     }
     
-    addListButton = [self addNewListButton:@"New List"];
-    [addListButton addTarget:self action:@selector(createList) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addListButton];
-    [self adjustTableView];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [_iPadNewListButton addTarget:self action:@selector(createList) forControlEvents:UIControlEventTouchUpInside];
+        [_tableView setDelegate:self];
+        [_tableView setDataSource:self];
+    } else {
+        addListButton = [self addNewListButton:@"New List"];
+        [addListButton addTarget:self action:@selector(createList) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:addListButton];
+        [self adjustTableView];
+    }
     
     [_itemTextField setDelegate:self];
     [_backBarButtonItem setAction:@selector(drawerAction)];
     [_favoritesBarButtonItem setAction:@selector(favoritesDrawerAction)];
+    [self setupGADBannerView];
 }
 
 - (void)adjustTableView {
@@ -85,7 +83,9 @@
             rect.origin.y += _itemTextField.frame.size.height;
         }
     }
-    rect.size.height = addListButton.frame.origin.y - (_itemTextField.frame.size.height + NAVIGATION_BAR_HEIGHT + [UIApplication sharedApplication].statusBarFrame.size.height);
+    
+    rect.size.height = addListButton.frame.origin.y - (_itemTextField.frame.size.height + NAVIGATION_BAR_HEIGHT + [UIApplication sharedApplication].statusBarFrame.size.height + bannerView.frame.size.height);
+
     self.tableView.frame = rect;
 }
 
@@ -128,10 +128,16 @@
             _navItem.title = _currentList.title;
             [self.tableView reloadData];
         } else {
-            [[DataManager sharedInstance] addNewItemToCurrentList:_currentList name:_itemTextField.text  isFavorited:NO details:nil];
-            [self.tableView reloadData];
-            _itemTextField.text = @"";
-            [_itemTextField resignFirstResponder];
+            if ([self currentListContainsListItem:_itemTextField.text]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Already Done!" message:@"Favorite already exist in list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                alert.alertViewStyle = UIAlertViewStyleDefault;
+                [alert show];
+            } else {
+                [[DataManager sharedInstance] addNewItemToCurrentList:_currentList name:_itemTextField.text  isFavorited:NO details:nil];
+                [self.tableView reloadData];
+                _itemTextField.text = @"";
+                [_itemTextField resignFirstResponder];
+            }
         }
     }
 }
@@ -139,18 +145,22 @@
 #pragma mark - Drawer Actions
 
 - (void)drawerAction {
-    if (self.containerViewController.drawerOpen) {
-        [self.containerViewController moveToOriginalPosition];
-    } else {
-        [self.containerViewController showDrawer];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        if (self.containerViewController.drawerOpen) {
+            [self.containerViewController moveToOriginalPosition];
+        } else {
+            [self.containerViewController showDrawer];
+        }
     }
 }
 
 - (void)favoritesDrawerAction {
-    if (self.containerViewController.favoritesDrawerOpen) {
-        [self.containerViewController moveToOriginalPosition];
-    } else {
-        [self.containerViewController showFavoritesDrawer];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        if (self.containerViewController.favoritesDrawerOpen) {
+            [self.containerViewController moveToOriginalPosition];
+        } else {
+            [self.containerViewController showFavoritesDrawer];
+        }
     }
 }
 
@@ -162,7 +172,13 @@
             [[DataManager sharedInstance] createList:[alertView textFieldAtIndex:0].text category:nil];
             _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
             _navItem.title = _currentList.title;
-            [self adjustTableView];
+            if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+                [self adjustTableView];
+            } else {
+                AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                delegate.drawerViewController.lists = [[NSMutableArray alloc] initWithArray:[[DataManager sharedInstance] fetchLists]];
+                [delegate.drawerViewController.tableView reloadData];
+            }
             [self.tableView reloadData];
             break;
         default:
@@ -203,7 +219,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    float cellHeight = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 88 : 44;
+    return cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -220,32 +237,105 @@
     [self.tableView reloadData];
 }
 
+- (BOOL)currentListContainsListItem:(NSString*)itemName {
+    BOOL hasItem = NO;
+    for (ListItem *currentListItem in _currentList.items) {
+        if ([currentListItem.name isEqual:itemName]) {
+            hasItem = YES;
+            break;
+        }
+    }
+    return hasItem;
+}
+
 #pragma mark -- FavoritesCell delegate methods
 - (void)addItemFromFavoritesList:(ListItem*)item {
     if (!_currentList) {
-        [[DataManager sharedInstance] addItemToNewList:item];
+        [[DataManager sharedInstance] addNewItemToNewList:item.name isFavorited:[item.isFavorited boolValue] details:nil];
         _currentList = (List*)[[[DataManager sharedInstance] fetchLists] lastObject];
         _navItem.title = _currentList.title;
         [self.tableView reloadData];
-        [self adjustTableView];
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+            [self adjustTableView];
+        }
     } else {
-        if ([_currentList.items containsObject:item]) {
+        if ([self currentListContainsListItem:item.name]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Already Done!" message:@"Favorite already exist in list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             alert.alertViewStyle = UIAlertViewStyleDefault;
             [alert show];
         } else {
-            [[DataManager sharedInstance] addItemToCurrentList:_currentList item:item];
+            [[DataManager sharedInstance] addNewItemToCurrentList:_currentList name:item.name isFavorited:[item.isFavorited boolValue] details:nil];
             [self.tableView reloadData];
-            [self adjustTableView];
+            if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+                [self adjustTableView];
+            }
         }
     }
 }
 
 - (void)removeItemFromFavoritesList:(ListItem *)item {
-    [[DataManager sharedInstance] updateItemFavorite:item];
-    [_containerViewController.favoritesViewController.favoritedItems removeObject:item];
-    [_containerViewController.favoritesViewController.tableView reloadData];
+    [[DataManager sharedInstance] updateFavoriteItemsWithIdenticalNames:item.name];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        for (ListItem *itm in delegate.favoritesViewController.favoritedItems) {
+            if ([itm.name isEqualToString:item.name]) {
+                [delegate.favoritesViewController.favoritedItems removeObject:itm];
+                break;
+            }
+        }
+        [delegate.favoritesViewController setupFavorites];
+        [delegate.favoritesViewController.tableView reloadData];
+    } else {
+        [_containerViewController.favoritesViewController.favoritedItems removeObject:item];
+        for (ListItem *itm in _containerViewController.favoritesViewController.favoritedItems) {
+            if ([itm.name isEqualToString:item.name]) {
+                [_containerViewController.favoritesViewController.favoritedItems removeObject:itm];
+                break;
+            }
+        }
+        [_containerViewController.favoritesViewController.tableView reloadData];
+    }
     [self.tableView reloadData];
+}
+
+#pragma mark -- SplitViewController delegate methods
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation{
+    return NO;
+}
+
+#pragma mark -- Google AdMob methods
+
+- (void)setupGADBannerView {
+    CGPoint origin = CGPointMake(0.0, self.view.frame.size.height - (kGADAdSizeBanner.size.height + addListButton.frame.size.height));
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        bannerView = [[GADBannerView alloc] init];
+        bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.iPadBannerContainer addSubview:bannerView];
+        [self.iPadBannerContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bannerView]|" options:NSLayoutFormatDirectionMask metrics:nil views:NSDictionaryOfVariableBindings(bannerView)]];
+        [self.iPadBannerContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[bannerView]|" options:NSLayoutFormatDirectionMask metrics:nil views:NSDictionaryOfVariableBindings(bannerView)]];
+    } else {
+        bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait origin:origin];
+        [self.view addSubview:bannerView];
+    }
+    
+    bannerView.adUnitID = ADD_UNIT_ID_BOTTOM_BANNER;
+    bannerView.rootViewController = self;
+    [bannerView loadRequest:[self createGADRequest]];
+    
+    //Adjust TableView Height iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        CGRect rect = self.tableView.frame;
+        rect.size.height -= bannerView.frame.size.height;
+        self.tableView.frame = rect;
+    }
+}
+
+- (GADRequest*)createGADRequest {
+    GADRequest *request = [GADRequest request];
+//    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    return request;
 }
 
 @end

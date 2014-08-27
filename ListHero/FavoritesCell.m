@@ -9,6 +9,8 @@
 #import "FavoritesCell.h"
 #import "DataManager.h"
 
+#define kImageViewSizeIpad 48
+
 @implementation FavoritesCell
 
 - (IBAction)addItemAction:(id)sender {
@@ -24,8 +26,25 @@
     UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFavorite)];
     tapped.numberOfTapsRequired = 1;
     [_favoritedImageView addGestureRecognizer:tapped];
-    
+    [self iPadResizeFrames];
     [self updateFavorited];
+}
+
+- (void)iPadResizeFrames {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGRect plusRect = _plusButton.frame;
+        CGRect titleRect = _titleLabel.frame;
+        CGRect favoriteRect = _favoritedImageView.frame;
+        
+        plusRect.origin.x = 20;
+        titleRect.size.width = 180;
+        titleRect.origin.x = 70;
+        favoriteRect.origin.x = 250;
+        
+        _plusButton.frame = plusRect;
+        _titleLabel.frame = titleRect;
+        _favoritedImageView.frame = favoriteRect;
+    }
 }
 
 - (void)updateFavorited {
