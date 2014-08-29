@@ -111,14 +111,12 @@
 }
 
 - (void)createList {
-    createListAlertView = [[UIAlertView alloc] initWithTitle:@"Create Your List" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    createListAlertView = [[UIAlertView alloc] initWithTitle:@"Create New List" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     createListAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField *textField = [createListAlertView textFieldAtIndex:0];
     textField.placeholder = @"List title";
     [createListAlertView show];
 }
-
-
 
 - (IBAction)addItemAction:(id)sender {
     if (![_itemTextField.text isEqual:@""]) {

@@ -54,19 +54,27 @@
 }
 
 - (void)setupFavorites {
-    BOOL isCached = NO;
-    NSArray *items = [[DataManager sharedInstance] fetchItems];
     _favoritedItems = [[NSMutableArray alloc] init];
+    NSMutableArray *favorites = [[NSMutableArray alloc] init];
+    NSArray *items = [[DataManager sharedInstance] fetchItems];
     for(ListItem *item in items) {
         if (item.isFavorited.boolValue) {
-            for(ListItem *cachedItem in _favoritedItems) {
-                if ([item.name isEqual:cachedItem.name]) {
-                    isCached = YES;
-                    break;
+            [favorites addObject:item];
+        }
+    }
+    
+    NSMutableArray *uniqueFavorites = [[NSMutableArray alloc] init];
+    uniqueFavorites = [favorites valueForKeyPath:@"@distinctUnionOfObjects.name"];
+    
+    int count = 0;
+    for(ListItem *item in favorites) {
+        if (count != uniqueFavorites.count) {
+            if ([uniqueFavorites containsObject:item.name]) {
+                NSMutableArray *favoriteItemsStringsDict = [_favoritedItems valueForKeyPath:@"@distinctUnionOfObjects.name"];
+                if (![favoriteItemsStringsDict containsObject:item.name]) {
+                    [_favoritedItems addObject:item];
+                    count++;
                 }
-            }
-            if (!isCached) {
-                [_favoritedItems addObject:item];
             }
         }
     }
