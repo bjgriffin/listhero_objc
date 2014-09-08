@@ -52,7 +52,7 @@
                         <outlet property="delegate" destination="-1" id="FQq-DO-2CH"/>
                     </connections>
                 </tableView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your item!" minimumFontSize="17" id="8Gq-f0-HDg">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your item here!" minimumFontSize="17" id="8Gq-f0-HDg">
                     <rect key="frame" x="20" y="64" width="237" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

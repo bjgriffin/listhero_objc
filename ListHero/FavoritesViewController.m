@@ -84,6 +84,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         CGRect rect = self.tableView.frame;
         rect.origin.y += kNavigationBarPlusStatusBarHeight;
+        rect.size.height -= self.tabBarController.tabBar.frame.size.height + kNavigationBarPlusStatusBarHeight;
         self.tableView.frame = rect;
     }
 }

@@ -34,7 +34,7 @@
                                     <outlet property="delegate" destination="iij-hn-ypc" id="j05-cS-uet"/>
                                 </connections>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your item!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-9n-3Pe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your item here!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-9n-3Pe">
                                 <rect key="frame" x="20" y="44" width="621" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>

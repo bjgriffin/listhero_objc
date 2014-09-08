@@ -42,6 +42,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.0];
     [self.view setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(130.0/255.0) blue:(250.0/255.0) alpha:1.0]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGRect rect = self.tableView.frame;
+        rect.size.height -= self.tabBarController.tabBar.frame.size.height;
+        self.tableView.frame = rect;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
