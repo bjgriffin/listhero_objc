@@ -45,15 +45,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpz-hy-25I">
-                                <rect key="frame" x="629" y="56" width="68" height="68"/>
+                                <rect key="frame" x="629" y="56" width="76" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="68" id="e0Y-Sy-K2d"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="68" id="nz1-IS-Ht5"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="plus-icon-normal@2x.png"/>
-                                <state key="selected" backgroundImage="plus-icon-selected@2x.png"/>
-                                <state key="highlighted" backgroundImage="plus-icon-selected.png"/>
+                                <state key="normal" backgroundImage="ios7-plus-icon-normal.png"/>
+                                <state key="disabled" image="ios7-plus-icon-selected.png"/>
+                                <state key="selected" backgroundImage="ios7-plus-icon-selected.png"/>
+                                <state key="highlighted" backgroundImage="ios7-plus-icon-selected.png"/>
                                 <connections>
                                     <action selector="addItemAction:" destination="iij-hn-ypc" eventType="touchUpInside" id="xlE-uY-C4K"/>
                                 </connections>
@@ -171,13 +172,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ios7-plus-icon-normal.png" width="76" height="76"/>
+        <image name="ios7-plus-icon-selected.png" width="76" height="76"/>
         <image name="list-hero-bg-blue-ipad.png" width="640" height="1136"/>
         <image name="list-hero-button-normal@2x.png" width="34" height="34"/>
         <image name="list-hero-button-selected.png" width="320" height="44"/>
         <image name="list-hero-button-selected@2x.png" width="34" height="34"/>
-        <image name="plus-icon-normal@2x.png" width="320" height="568"/>
-        <image name="plus-icon-selected.png" width="34" height="34"/>
-        <image name="plus-icon-selected@2x.png" width="34" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

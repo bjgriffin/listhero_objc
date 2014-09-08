@@ -61,11 +61,12 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UME-Lf-cGh">
                     <rect key="frame" x="265" y="73" width="34" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="plus-icon-normal.png">
+                    <state key="normal" image="ios7-plus-icon-normal.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" image="plus-icon-selected.png"/>
-                    <state key="highlighted" image="plus-icon-selected.png"/>
+                    <state key="disabled" image="ios7-plus-icon-selected.png"/>
+                    <state key="selected" image="ios7-plus-icon-selected.png"/>
+                    <state key="highlighted" image="ios7-plus-icon-selected.png"/>
                     <connections>
                         <action selector="addItemAction:" destination="-1" eventType="touchUpInside" id="3SR-TL-udc"/>
                     </connections>
@@ -78,9 +79,9 @@
     </objects>
     <resources>
         <image name="ic_drawer.png" width="32" height="32"/>
+        <image name="ios7-plus-icon-normal.png" width="76" height="76"/>
+        <image name="ios7-plus-icon-selected.png" width="76" height="76"/>
         <image name="list-hero-bg-blue.png" width="320" height="568"/>
-        <image name="plus-icon-normal.png" width="34" height="34"/>
-        <image name="plus-icon-selected.png" width="34" height="34"/>
         <image name="star-icon-favorited.png" width="34" height="34"/>
     </resources>
 </document>

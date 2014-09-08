@@ -137,6 +137,8 @@
                 [_itemTextField resignFirstResponder];
             }
         }
+    } else {
+        [_itemTextField becomeFirstResponder];
     }
 }
 
@@ -327,6 +329,11 @@
         CGRect rect = self.tableView.frame;
         rect.size.height -= bannerView.frame.size.height;
         self.tableView.frame = rect;
+        if ([[UIScreen mainScreen] bounds].size.height < 568) {
+            CGRect rect1 = bannerView.frame;
+            rect1.origin.y = self.tableView.frame.origin.y + (self.tableView.frame.size.height+self.itemTextField.frame.size.height);
+            bannerView.frame = rect1;
+        }
     }
 }
 

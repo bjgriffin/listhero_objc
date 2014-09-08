@@ -16,6 +16,9 @@
 		36307A3018C39C05003BC0A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36307A0C18C39C05003BC0A2 /* UIKit.framework */; };
 		36307A3818C39C05003BC0A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36307A3618C39C05003BC0A2 /* InfoPlist.strings */; };
 		36307A3A18C39C05003BC0A2 /* ListHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36307A3918C39C05003BC0A2 /* ListHeroTests.m */; };
+		3652FEDF19BE01D4003A69D2 /* ios7-plus-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3652FEDE19BE01D4003A69D2 /* ios7-plus-icon@2x.png */; };
+		3652FEE219BE03D2003A69D2 /* ios7-plus-icon-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3652FEE019BE03D2003A69D2 /* ios7-plus-icon-normal@2x.png */; };
+		3652FEE519BE076F003A69D2 /* ios7-plus-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3652FEE419BE076F003A69D2 /* ios7-plus-icon-selected@2x.png */; };
 		366EBA7519AE1FEB0050E6D0 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EBA7419AE1FEB0050E6D0 /* libGoogleAdMobAds.a */; };
 		366EBA7819AE204F0050E6D0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EBA7719AE204F0050E6D0 /* StoreKit.framework */; };
 		366EBA7A19AE20560050E6D0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EBA7919AE20560050E6D0 /* AudioToolbox.framework */; };
@@ -140,6 +143,9 @@
 		3648878A194CA64A00D8DF56 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		3648878C194CA64A00D8DF56 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
 		3648878D194CA64A00D8DF56 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
+		3652FEDE19BE01D4003A69D2 /* ios7-plus-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-plus-icon@2x.png"; sourceTree = "<group>"; };
+		3652FEE019BE03D2003A69D2 /* ios7-plus-icon-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-plus-icon-normal@2x.png"; sourceTree = "<group>"; };
+		3652FEE419BE076F003A69D2 /* ios7-plus-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-plus-icon-selected@2x.png"; sourceTree = "<group>"; };
 		3666227818F1E9D100E1FE61 /* FavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCell.h; sourceTree = "<group>"; };
 		3666227918F1E9D100E1FE61 /* FavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCell.m; sourceTree = "<group>"; };
 		3666227B18F1E9F000E1FE61 /* FavoritesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
@@ -407,6 +413,9 @@
 			children = (
 				36B79FA819AC2C4B00DA3153 /* complete@2x.png */,
 				36B79FA919AC2C4B00DA3153 /* incomplete@2x.png */,
+				3652FEE419BE076F003A69D2 /* ios7-plus-icon-selected@2x.png */,
+				3652FEDE19BE01D4003A69D2 /* ios7-plus-icon@2x.png */,
+				3652FEE019BE03D2003A69D2 /* ios7-plus-icon-normal@2x.png */,
 				36B79FAA19AC2C4B00DA3153 /* list-hero-button-normal@2x.png */,
 				36B79FAB19AC2C4B00DA3153 /* list-hero-button-selected@2x.png */,
 				36CD059C19AD534600C9A01D /* plus-icon-normal@2x.png */,
@@ -518,13 +527,16 @@
 				36CD059E19AD534600C9A01D /* plus-icon-normal@2x.png in Resources */,
 				36DB721619A6A326000D57A3 /* Images.xcassets in Resources */,
 				36B79FB019AC2C4B00DA3153 /* complete@2x.png in Resources */,
+				3652FEE219BE03D2003A69D2 /* ios7-plus-icon-normal@2x.png in Resources */,
 				36DB720719A69F0E000D57A3 /* ic_drawer.png in Resources */,
 				36B67FE919A691FC00EB465D /* ShoppingListCell.xib in Resources */,
 				36B67FEA19A691FC00EB465D /* DrawerCell.xib in Resources */,
+				3652FEDF19BE01D4003A69D2 /* ios7-plus-icon@2x.png in Resources */,
 				36B79FB619AC2C4B00DA3153 /* star-icon-favorited@2x.png in Resources */,
 				36B67FEB19A691FC00EB465D /* FavoritesCell.xib in Resources */,
 				36B67FEC19A691FC00EB465D /* ShoppingListViewController.xib in Resources */,
 				36B67FED19A691FC00EB465D /* DrawerViewController.xib in Resources */,
+				3652FEE519BE076F003A69D2 /* ios7-plus-icon-selected@2x.png in Resources */,
 				36B67FEE19A691FC00EB465D /* BaseViewController.xib in Resources */,
 				36B67FEF19A691FC00EB465D /* ContainerViewController.xib in Resources */,
 				36B67FF019A691FC00EB465D /* delete-icon-normal.png in Resources */,
