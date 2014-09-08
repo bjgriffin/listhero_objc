@@ -26,11 +26,12 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vv6-mp-Kus">
                         <rect key="frame" x="70" y="4" width="34" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="plus-icon-normal.png">
+                        <state key="normal" image="ios7-plus-icon-normal.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <state key="selected" image="plus-icon-selected.png"/>
-                        <state key="highlighted" image="plus-icon-selected.png"/>
+                        <state key="disabled" image="ios7-plus-icon-selected.png"/>
+                        <state key="selected" image="ios7-plus-icon-selected.png"/>
+                        <state key="highlighted" image="ios7-plus-icon-selected.png"/>
                         <connections>
                             <action selector="addItemAction:" destination="Yhq-wu-KQ7" eventType="touchUpInside" id="pck-Oc-S2y"/>
                         </connections>
@@ -45,8 +46,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="plus-icon-normal.png" width="34" height="34"/>
-        <image name="plus-icon-selected.png" width="34" height="34"/>
+        <image name="ios7-plus-icon-normal.png" width="76" height="76"/>
+        <image name="ios7-plus-icon-selected.png" width="76" height="76"/>
         <image name="star-icon-unfavorited.png" width="34" height="34"/>
     </resources>
 </document>
